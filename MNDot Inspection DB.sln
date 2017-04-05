@@ -21,11 +21,16 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web", "Web\", "{A4628712-6D
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "51211"
+		SlnRelativePath = "Web\"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "API\WebAPI\WebAPI.csproj", "{D7958C02-25A4-4101-A3B0-360F54BBC3A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI.Tests", "WebAPI.Tests\WebAPI.Tests.csproj", "{00B2556A-D445-4B48-9F7C-5A57A233E8B6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{A2D21A0E-335C-4097-A845-E4F40D98397F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{BD28A823-81D4-49A3-98FF-E1361E2F981B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI.Tests", "API\WebAPI.Tests\WebAPI.Tests.csproj", "{00B2556A-D445-4B48-9F7C-5A57A233E8B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,5 +53,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A4628712-6D84-4D1C-82E5-15C932849EAA} = {A2D21A0E-335C-4097-A845-E4F40D98397F}
+		{D7958C02-25A4-4101-A3B0-360F54BBC3A9} = {BD28A823-81D4-49A3-98FF-E1361E2F981B}
+		{00B2556A-D445-4B48-9F7C-5A57A233E8B6} = {BD28A823-81D4-49A3-98FF-E1361E2F981B}
 	EndGlobalSection
 EndGlobal
