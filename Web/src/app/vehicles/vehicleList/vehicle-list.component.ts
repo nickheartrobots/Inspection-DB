@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IVehicle } from '../vehicle';
 
 @Component({
-    selector: 'app-vehicles',
     templateUrl: `./vehicle-list.component.html`,
     styleUrls: ['./vehicle-list.component.css']
 })
-export class VehicleComponent {
-    title = 'Vehicle List';
-    vehicles: any[] =
+export class VehiclesComponent implements OnInit {
+    title: string = 'Vehicle List';
+    listFilter: string = 'Ford';
+    vehicles: IVehicle[] =
     [
         {
             'ownerID': '12323425',
@@ -33,5 +34,9 @@ export class VehicleComponent {
             'state': 'ND',
             'decalNumber': '681234'
         }
-    ]
+    ];
+
+    ngOnInit(): void {
+        console.log("OnInit()")
+    }
 }
