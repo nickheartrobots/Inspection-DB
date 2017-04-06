@@ -4,36 +4,45 @@
     </div>
     <div class='panel-body'>
         <form>
+            <h2>Inspection</h2>
             <div class='row'>
-                <div class='form-group col-lg-2 col-lg-offset-10'>
-                    <label for='inspection-veh-decal'>13.Decal #</label>
-                    <div>
-                        <input class='form-control' type='text' id='inspection-veh-decal'> 
-                    </div>
-                </div>
-            </div>
-            <div class='row'>
-                <div class='form-group col-lg-2'>
+                <div class='form-group col-md-2'>
                     <label for='date-input'>1.Date</label>
                     <div>
                         <input class='form-control' type='date' id='date-input'>
                     </div>
                 </div>
-                <div class='form-group col-lg-3'>
+                <div class='form-group col-md-2'>
+                    <label for='inspection-time-in'>4.Time in</label>
+                    <div>
+                        <input class='form-control' type='time' id='inspection-time-in'> 
+                    </div>
+                </div>
+                <div class='form-group col-md-2'>
+                    <label for='inspection-state'>5.Time out</label>
+                    <div>
+                        <input class='form-control' type='time' id='inspection-time-out'> 
+                    </div>
+                </div>
+            </div><!--/.row-->
+
+            <div class='row'>
+                <div class='form-group col-md-3'>
                     <label for='inspection-address'>2.Insp. Location (Street Address)</label>
                     <div>
                         <input class='form-control' type='text' id='inspection-address'> 
                     </div>
                 </div>
-                <div class='form-group col-lg-5'>
+
+                <div class='form-group col-md-5'>
                     <div class='row'>
-                        <div class='col-lg-6'>
+                        <div class='col-md-6'>
                             <label for='inspection-city'>3.City</label>
                             <div>
                                 <input class='form-control' type='text' id='inspection-city'> 
                             </div>
                         </div>
-                        <div class='col-lg-2'>
+                        <div class='col-md-2'>
                             <label for='inspection-state'>State</label>
                             <div>
                                 <select class='form-control' id='inspection-state'>
@@ -41,7 +50,7 @@
                                 </select>
                             </div> 
                         </div>
-                        <div class='col-lg-4'>
+                        <div class='col-md-4'>
                             <label for='inspection-zip'>Zip</label>
                             <div>
                                 <input class='form-control' type='text' id='inspection-zip'> 
@@ -49,57 +58,72 @@
                         </div> 
                     </div>
                 </div>
-                <div class='form-group col-lg-1'>
-                    <label for='inspection-time-in'>4.Time in</label>
-                    <div>
-                        <input class='form-control' type='time' id='inspection-time-in'> 
-                    </div>
-                </div>
-                <div class='form-group col-lg-1'>
-                    <label for='inspection-state'>5.Time out</label>
-                    <div>
-                        <input class='form-control' type='time' id='inspection-time-out'> 
-                    </div>
-                </div>
             </div><!--/.row-->
+                <div class='row'>
+                    <div class='form-group col-md-6'>
+                        <div class='row'>
+                            <div class='col-md-6'>
+                                <label for='inspector-last-name'>22.Inspector's Last Name</label>
+                                <div>
+                                    <input class='form-control' type='text' id='inspector-last-name'> 
+                                </div>
+                            </div>
+                            <div class='col-md-6'>
+                                <label for='inspector-first-name'>First Name</label>
+                                <div>
+                                    <input class='form-control' type='text' id='inspector-first-name'> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.row-->
             <div class='row'>
-                <div class='form-group col-lg-2'>
+                <div class='form-group col-md-3'>
+                    <label for='inspector-num'>23.Inspector #</label>
+                    <div>
+                        <input class='form-control' type='text' id='inspector-num'> 
+                    </div>
+                </div> 
+            </div><!--row-->
+            <h2>Vehicle</h2>
+            <div class='row'>
+                <div class='form-group col-md-2'>
                     <label for='inspection-veh-make'>6.Veh Make</label>
                     <div>
                         <input class='form-control' type='text' id='inspection-veh-make'> 
                     </div>
                 </div>
-                <div class='form-group col-lg-1'>
+                <div class='form-group col-md-1'>
                     <label for='inspection-veh-year'>7.Year</label>
                     <div>
                         <input class='form-control' type='text' id='inspection-veh-year'> 
                     </div>
                 </div>
-                <div class='form-group col-lg-3'>
+                <div class='form-group col-md-3'>
                     <label for='inspection-veh-vin'>8.VIN</label>
                     <div>
                         <input class='form-control' type='text' id='inspection-veh-vin'> 
                     </div>
                 </div>
-                <div class='form-group col-lg-1'>
+                <div class='form-group col-md-1'>
                     <label for='inspection-veh-unit'>9.Unit #</label>
                     <div>
                         <input class='form-control' type='text' id='inspection-veh-unit'> 
                     </div>
                 </div>
-                <div class='form-group col-lg-2'>
+                <div class='form-group col-md-2'>
                     <label for='inspection-veh-odometer'>10.Odometer</label>
                     <div>
                         <input class='form-control' type='text' id='inspection-veh-odometer'> 
                     </div>
                 </div>
-                <div class='form-group col-lg-2'>
+                <div class='form-group col-md-2'>
                     <label for='inspection-veh-lic'>11.Lic #</label>
                     <div>
                         <input class='form-control' type='text' id='inspection-veh-lic'> 
                     </div>
                 </div>
-                <div class='form-group col-lg-1'>
+                <div class='form-group col-md-1'>
                     <label for='inspection-veh-state'>12.State</label>
                     <div>
                         <select class='form-control' id='inspection-veh-state'>
@@ -108,8 +132,9 @@
                     </div> 
                 </div>
             </div><!--/.row-->
+            <h2>Owner</h2>
             <div class='row'>
-                <div class='form-group col-lg-4'>
+                <div class='form-group col-md-4'>
                     <div class='row'>
                         <div class='col-xs-6'>
                             <label for='owner-last-name'>14.Owner Last Name</label>
@@ -125,21 +150,21 @@
                         </div>
                     </div>
                 </div>
-                <div class='form-group col-lg-3'>
+                <div class='form-group col-md-3'>
                     <label for='owner-address'>15.Owner Street Address</label>
                     <div>
                         <input class='form-control' type='text' id='owner-address'> 
                     </div>
                 </div>
-                <div class='form-group col-lg-5'>
+                <div class='form-group col-md-5'>
                     <div class='row'>
-                        <div class='col-lg-6'>
+                        <div class='col-md-6'>
                             <label for='owner-city'>16.City</label>
                             <div>
                                 <input class='form-control' type='text' id='owner-city'> 
                             </div>
                         </div>
-                        <div class='col-lg-2'>
+                        <div class='col-md-2'>
                             <label for='owner-state'>State</label>
                             <div>
                                 <select class='form-control' id='owner-state'>
@@ -147,7 +172,7 @@
                                 </select>
                             </div> 
                         </div>
-                        <div class='col-lg-4'>
+                        <div class='col-md-4'>
                             <label for='owner-zip'>Zip</label>
                             <div>
                                 <input class='form-control' type='text' id='owner-zip'> 
@@ -157,7 +182,22 @@
                 </div>
             </div><!--/.row-->
             <div class='row'>
-                <div class='form-group col-lg-4'>
+                <div class='form-group col-md-2'>
+                    <label for='inspection-veh-decal'>13.Decal #</label>
+                    <div>
+                        <input class='form-control' type='text' id='inspection-veh-decal'> 
+                    </div>
+                </div>
+                <div class='form-group col-md-2'>
+                    <label for='owner-usdot'>20.Owner USDOT#</label>
+                    <div>
+                        <input class='form-control' type='text' id='owner-dot'> 
+                    </div>
+                </div>
+            </div><!--/.row-->
+            <h1>Carrier</h1>
+            <div class='row'>
+                <div class='form-group col-md-4'>
                     <div class='row'>
                         <div class='col-xs-6'>
                             <label for='carrie-last-name'>17.Carrier Last Name</label>
@@ -173,21 +213,21 @@
                         </div>
                     </div>
                 </div>
-                <div class='form-group col-lg-3'>
+                <div class='form-group col-md-3'>
                     <label for='carrier-address'>18.Carrier Street Address</label>
                     <div>
                         <input class='form-control' type='text' id='carrier-address'> 
                     </div>
                 </div>
-                <div class='form-group col-lg-5'>
+                <div class='form-group col-md-5'>
                     <div class='row'>
-                        <div class='col-lg-6'>
+                        <div class='col-md-6'>
                             <label for='carrier-city'>19.City</label>
                             <div>
                                 <input class='form-control' type='text' id='carrier-city'> 
                             </div>
                         </div>
-                        <div class='col-lg-2'>
+                        <div class='col-md-2'>
                             <label for='carrier-state'>State</label>
                             <div>
                                 <select class='form-control' id='carrier-state'>
@@ -195,7 +235,7 @@
                                 </select>
                             </div> 
                         </div>
-                        <div class='col-lg-4'>
+                        <div class='col-md-4'>
                             <label for='carrier-zip'>Zip</label>
                             <div>
                                 <input class='form-control' type='text' id='carrier-zip'> 
@@ -205,30 +245,12 @@
                 </div>
             </div><!--/.row-->
             <div class='row'>
-                <div class='form-group col-lg-2'>
-                    <label for='owner-usdot'>20.Owner USDOT#</label>
-                    <div>
-                        <input class='form-control' type='text' id='owner-dot'> 
-                    </div>
-                </div>
-                <div class='form-group col-lg-2'>
+                <div class='form-group col-md-2'>
                     <label for='carrier-usdot'>21.Carrier USDOT#</label>
                     <div>
                         <input class='form-control' type='text' id='carrier-owner-dot'> 
                     </div>
                 </div>
-                <div class='form-group col-lg-5'>
-                    <label for='inspector-name'>22.Inspector Name</label>
-                    <div>
-                        <input class='form-control' type='text' id='inspector-name'> 
-                    </div>
-                </div> 
-                <div class='form-group col-lg-3'>
-                    <label for='inspector-num'>23.Inspector #</label>
-                    <div>
-                        <input class='form-control' type='text' id='inspector-num'> 
-                    </div>
-                </div> 
             </div><!--/.row-->
         </form>
     </div>
