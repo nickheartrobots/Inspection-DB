@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { InspectionFormComponent } from './inspections/inspectionForm/inspection-form.component';
 import { VehiclesComponent } from './vehicles/vehicleList/vehicle-list.component';
 import { VehicleDetailComponent } from './vehicles/vehicleDetail/vehicle-detail.component';
 
@@ -14,6 +15,7 @@ import { VehicleDetailComponent } from './vehicles/vehicleDetail/vehicle-detail.
   declarations: [
     AppComponent,
     HomeComponent,
+    InspectionFormComponent,
     VehiclesComponent,
     VehicleDetailComponent
   ],
@@ -23,9 +25,10 @@ import { VehicleDetailComponent } from './vehicles/vehicleDetail/vehicle-detail.
     HttpModule,
     MaterialModule,
     RouterModule.forRoot([
+      { path: '', component: HomeComponent},
+      { path: 'inspection', component: InspectionFormComponent},
       { path: 'vehicles', component: VehiclesComponent },
       { path: 'vehicle/:id', component: VehicleDetailComponent},
-      { path: '', component: HomeComponent},
       { path: '**', redirectTo: '', pathMatch: 'full'}
     ])
   ],
