@@ -3,25 +3,25 @@
         {{title}}
     </div>
     <div class='panel-body'>
-        <form>
+        <form (change)='onFormChange()' (ngSubmit)='onSubmit()' #inspectionForm='ngForm'>
             <h2>Inspection</h2>
             <div class='row'>
                 <div class='form-group col-md-2'>
                     <label for='date-input'>1.Date</label>
                     <div>
-                        <input class='form-control' type='date' id='date-input'>
+                        <input class='form-control' type='date' id='date-input' required>
                     </div>
                 </div>
                 <div class='form-group col-md-2'>
                     <label for='inspection-time-in'>4.Time in</label>
                     <div>
-                        <input class='form-control' type='time' id='inspection-time-in'> 
+                        <input class='form-control' type='time' id='inspection-time-in' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-2'>
                     <label for='inspection-state'>5.Time out</label>
                     <div>
-                        <input class='form-control' type='time' id='inspection-time-out'> 
+                        <input class='form-control' type='time' id='inspection-time-out' required> 
                     </div>
                 </div>
             </div><!--/.row-->
@@ -30,7 +30,7 @@
                 <div class='form-group col-md-3'>
                     <label for='inspection-address'>2.Insp. Location (Street Address)</label>
                     <div>
-                        <input class='form-control' type='text' id='inspection-address'> 
+                        <input class='form-control' type='text' id='inspection-address' [(ngModel)]='inspectionStreetAddress' name='inspection-address' required> 
                     </div>
                 </div>
 
@@ -39,7 +39,7 @@
                         <div class='col-md-6'>
                             <label for='inspection-city'>3.City</label>
                             <div>
-                                <input class='form-control' type='text' id='inspection-city'> 
+                                <input class='form-control' type='text' id='inspection-city' required> 
                             </div>
                         </div>
                         <div class='col-md-2'>
@@ -53,7 +53,7 @@
                         <div class='col-md-4'>
                             <label for='inspection-zip'>Zip</label>
                             <div>
-                                <input class='form-control' type='text' id='inspection-zip'> 
+                                <input class='form-control' type='text' id='inspection-zip' required> 
                             </div>
                         </div> 
                     </div>
@@ -65,13 +65,13 @@
                             <div class='col-md-6'>
                                 <label for='inspector-last-name'>22.Inspector's Last Name</label>
                                 <div>
-                                    <input class='form-control' type='text' id='inspector-last-name'> 
+                                    <input class='form-control' type='text' id='inspector-last-name' required> 
                                 </div>
                             </div>
                             <div class='col-md-6'>
                                 <label for='inspector-first-name'>First Name</label>
                                 <div>
-                                    <input class='form-control' type='text' id='inspector-first-name'> 
+                                    <input class='form-control' type='text' id='inspector-first-name' required> 
                                 </div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                 <div class='form-group col-md-3'>
                     <label for='inspector-num'>23.Inspector #</label>
                     <div>
-                        <input class='form-control' type='text' id='inspector-num'> 
+                        <input class='form-control' type='text' id='inspector-num' required> 
                     </div>
                 </div> 
             </div><!--row-->
@@ -90,37 +90,37 @@
                 <div class='form-group col-md-2'>
                     <label for='inspection-veh-make'>6.Veh Make</label>
                     <div>
-                        <input class='form-control' type='text' id='inspection-veh-make'> 
+                        <input class='form-control' type='text' id='inspection-veh-make' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-1'>
                     <label for='inspection-veh-year'>7.Year</label>
                     <div>
-                        <input class='form-control' type='text' id='inspection-veh-year'> 
+                        <input class='form-control' type='text' id='inspection-veh-year' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-3'>
                     <label for='inspection-veh-vin'>8.VIN</label>
                     <div>
-                        <input class='form-control' type='text' id='inspection-veh-vin'> 
+                        <input class='form-control' type='text' id='inspection-veh-vin' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-1'>
                     <label for='inspection-veh-unit'>9.Unit #</label>
                     <div>
-                        <input class='form-control' type='text' id='inspection-veh-unit'> 
+                        <input class='form-control' type='text' id='inspection-veh-unit' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-2'>
                     <label for='inspection-veh-odometer'>10.Odometer</label>
                     <div>
-                        <input class='form-control' type='text' id='inspection-veh-odometer'> 
+                        <input class='form-control' type='text' id='inspection-veh-odometer' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-2'>
                     <label for='inspection-veh-lic'>11.Lic #</label>
                     <div>
-                        <input class='form-control' type='text' id='inspection-veh-lic'> 
+                        <input class='form-control' type='text' id='inspection-veh-lic' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-1'>
@@ -139,13 +139,13 @@
                         <div class='col-xs-6'>
                             <label for='owner-last-name'>14.Owner Last Name</label>
                             <div>
-                                <input class='form-control' type='text' id='owner-last-name'> 
+                                <input class='form-control' type='text' id='owner-last-name' required> 
                             </div>
                         </div>
                         <div class='col-xs-6'>
                             <label for='owner-first-name'>First Name</label>
                             <div>
-                                <input class='form-control' type='text' id='owner-first-name'> 
+                                <input class='form-control' type='text' id='owner-first-name'required> 
                             </div>
                         </div>
                     </div>
@@ -153,7 +153,7 @@
                 <div class='form-group col-md-3'>
                     <label for='owner-address'>15.Owner Street Address</label>
                     <div>
-                        <input class='form-control' type='text' id='owner-address'> 
+                        <input class='form-control' type='text' id='owner-address'required> 
                     </div>
                 </div>
                 <div class='form-group col-md-5'>
@@ -161,7 +161,7 @@
                         <div class='col-md-6'>
                             <label for='owner-city'>16.City</label>
                             <div>
-                                <input class='form-control' type='text' id='owner-city'> 
+                                <input class='form-control' type='text' id='owner-city' required> 
                             </div>
                         </div>
                         <div class='col-md-2'>
@@ -175,7 +175,7 @@
                         <div class='col-md-4'>
                             <label for='owner-zip'>Zip</label>
                             <div>
-                                <input class='form-control' type='text' id='owner-zip'> 
+                                <input class='form-control' type='text' id='owner-zip' required> 
                             </div>
                         </div> 
                     </div>
@@ -185,13 +185,13 @@
                 <div class='form-group col-md-2'>
                     <label for='inspection-veh-decal'>13.Decal #</label>
                     <div>
-                        <input class='form-control' type='text' id='inspection-veh-decal'> 
+                        <input class='form-control' type='text' id='inspection-veh-decal' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-2'>
                     <label for='owner-usdot'>20.Owner USDOT#</label>
                     <div>
-                        <input class='form-control' type='text' id='owner-dot'> 
+                        <input class='form-control' type='text' id='owner-dot' required> 
                     </div>
                 </div>
             </div><!--/.row-->
@@ -202,13 +202,13 @@
                         <div class='col-xs-6'>
                             <label for='carrie-last-name'>17.Carrier Last Name</label>
                             <div>
-                                <input class='form-control' type='text' id='carrier-last-name'> 
+                                <input class='form-control' type='text' id='carrier-last-name' required> 
                             </div>
                         </div>
                         <div class='col-xs-6'>
                             <label for='carrier-first-name'>First Name</label>
                             <div>
-                                <input class='form-control' type='text' id='carrier-first-name'> 
+                                <input class='form-control' type='text' id='carrier-first-name' required> 
                             </div>
                         </div>
                     </div>
@@ -216,7 +216,7 @@
                 <div class='form-group col-md-3'>
                     <label for='carrier-address'>18.Carrier Street Address</label>
                     <div>
-                        <input class='form-control' type='text' id='carrier-address'> 
+                        <input class='form-control' type='text' id='carrier-address' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-5'>
@@ -224,7 +224,7 @@
                         <div class='col-md-6'>
                             <label for='carrier-city'>19.City</label>
                             <div>
-                                <input class='form-control' type='text' id='carrier-city'> 
+                                <input class='form-control' type='text' id='carrier-city' required> 
                             </div>
                         </div>
                         <div class='col-md-2'>
@@ -238,7 +238,7 @@
                         <div class='col-md-4'>
                             <label for='carrier-zip'>Zip</label>
                             <div>
-                                <input class='form-control' type='text' id='carrier-zip'> 
+                                <input class='form-control' type='text' id='carrier-zip' required> 
                             </div>
                         </div> 
                     </div>
@@ -248,10 +248,11 @@
                 <div class='form-group col-md-2'>
                     <label for='carrier-usdot'>21.Carrier USDOT#</label>
                     <div>
-                        <input class='form-control' type='text' id='carrier-owner-dot'> 
+                        <input class='form-control' type='text' id='carrier-owner-dot' required> 
                     </div>
                 </div>
             </div><!--/.row-->
+            <button type='submit' class='btn btn-success' [disabled]='!inspectionForm.form.valid'>Submit</button>
         </form>
     </div>
 </div>
