@@ -3,25 +3,25 @@
         {{title}}
     </div>
     <div class='panel-body'>
-        <form (change)='onFormChange()' (ngSubmit)='onSubmit()' #inspectionForm='ngForm'>
+        <form #form="ngForm" novalidate (change)='onFormChange()' (ngSubmit)='onSubmit()' #inspectionForm='ngForm'>
             <h2>Inspection</h2>
             <div class='row'>
                 <div class='form-group col-md-2'>
                     <label for='date-input'>1.Date</label>
                     <div>
-                        <input class='form-control' type='date' id='date-input' [(ngModel)]='inspectionDate' name='inspection-date' required>
+                        <input class='form-control' type='date' id='date-input' [(ngModel)]='model.inspectionDate' name='inspection-date' required>
                     </div>
                 </div>
                 <div class='form-group col-md-2'>
                     <label for='inspection-time-in'>4.Time in</label>
                     <div>
-                        <input class='form-control' type='time' id='inspection-time-in' [(ngModel)]='inspectionTimeIn' name='inspection-time-in' required> 
+                        <input class='form-control' type='time' id='inspection-time-in' [(ngModel)]='model.inspectionTimeIn' name='inspection-time-in' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-2'>
                     <label for='inspection-time-out'>5.Time out</label>
                     <div>
-                        <input class='form-control' type='time' id='inspection-time-out' [(ngModel)]='inspectionTimeOut' name='inspection-time-out' required> 
+                        <input class='form-control' type='time' id='inspection-time-out' [(ngModel)]='model.inspectionTimeOut' name='inspection-time-out' required> 
                     </div>
                 </div>
             </div><!--/.row-->
@@ -30,7 +30,12 @@
                 <div class='form-group col-md-3'>
                     <label for='inspection-address'>2.Insp. Location (Street Address)</label>
                     <div>
-                        <input class='form-control' type='text' id='inspection-address' [(ngModel)]='inspectionStreetAddress' name='inspection-address' required> 
+                        <input class='form-control' [ngClass]="{'has-success': isError}" type='text' id='inspection-address'
+                            [(ngModel)]='model.inspectionStreetAddress' name='inspection-address'
+                            #inspectionAddress="ngModel" required> 
+                    </div>
+                    <div [hidden]="inspectionAddress.valid">
+                        Inspection Address Is required
                     </div>
                 </div>
 
@@ -39,13 +44,13 @@
                         <div class='col-md-6'>
                             <label for='inspection-city'>3.City</label>
                             <div>
-                                <input class='form-control' type='text' id='inspection-city' [(ngModel)]='inspectionCity' name='inspection-city' required> 
+                                <input class='form-control' type='text' id='inspection-city' [(ngModel)]='model.inspectionCity' name='inspection-city' required> 
                             </div>
                         </div>
                         <div class='col-md-2'>
                             <label for='inspection-state'>State</label>
                             <div>
-                                <select class='form-control' id='inspection-state' [(ngModel)]='inspectionState' name='inspection-state'>
+                                <select class='form-control' id='inspection-state' [(ngModel)]='model.inspectionState' name='inspection-state'>
                                     <option *ngFor='let state of states'>{{state}}</option>
                                 </select>
                             </div> 
@@ -53,7 +58,7 @@
                         <div class='col-md-4'>
                             <label for='inspection-zip'>Zip</label>
                             <div>
-                                <input class='form-control' type='text' id='inspection-zip' [(ngModel)]='inspectionZip' name='inspection-zip' required> 
+                                <input class='form-control' type='text' id='inspection-zip' [(ngModel)]='model.inspectionZip' name='inspection-zip' required> 
                             </div>
                         </div> 
                     </div>
@@ -65,13 +70,13 @@
                             <div class='col-md-6'>
                                 <label for='inspector-last-name'>22.Inspector's Last Name</label>
                                 <div>
-                                    <input class='form-control' type='text' id='inspector-last-name' [(ngModel)]='inspectorLastName' name='inspector-last-name' required> 
+                                    <input class='form-control' type='text' id='inspector-last-name' [(ngModel)]='model.inspectorLastName' name='inspector-last-name' required> 
                                 </div>
                             </div>
                             <div class='col-md-6'>
                                 <label for='inspector-first-name'>First Name</label>
                                 <div>
-                                    <input class='form-control' type='text' id='inspector-first-name' [(ngModel)]='inspectorFirstName' name='inspector-first-name' required> 
+                                    <input class='form-control' type='text' id='inspector-first-name' [(ngModel)]='model.inspectorFirstName' name='inspector-first-name' required> 
                                 </div>
                             </div>
                         </div>
@@ -81,7 +86,7 @@
                 <div class='form-group col-md-3'>
                     <label for='inspector-num'>23.Inspector #</label>
                     <div>
-                        <input class='form-control' type='text' id='inspector-num' [(ngModel)]='inspectorNumber' name='inspector-number' required> 
+                        <input class='form-control' type='text' id='inspector-num' [(ngModel)]='model.inspectorNumber' name='inspector-number' required> 
                     </div>
                 </div> 
             </div><!--row-->
@@ -90,43 +95,43 @@
                 <div class='form-group col-md-2'>
                     <label for='vehicle-make'>6.Veh Make</label>
                     <div>
-                        <input class='form-control' type='text' id='vehicle-make' [(ngModel)]='vehicleMake' name='vehicle-make' required> 
+                        <input class='form-control' type='text' id='vehicle-make' [(ngModel)]='model.vehicleMake' name='vehicle-make' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-1'>
                     <label for='vehicle-year'>7.Year</label>
                     <div>
-                        <input class='form-control' type='text' id='vehicle-year' [(ngModel)]='vehicleYear' name='vehicle-year' required> 
+                        <input class='form-control' type='text' id='vehicle-year' [(ngModel)]='model.vehicleYear' name='vehicle-year' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-3'>
                     <label for='vehicle-vin'>8.VIN</label>
                     <div>
-                        <input class='form-control' type='text' id='vehicle-vin' [(ngModel)]='vehicleVin' name='vehicle-vin' required> 
+                        <input class='form-control' type='text' id='vehicle-vin' [(ngModel)]='model.vehicleVin' name='vehicle-vin' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-1'>
                     <label for='vehicle-unit-number'>9.Unit #</label>
                     <div>
-                        <input class='form-control' type='text' id='vehicle-unit-number' [(ngModel)]='vehicleUnitNumber' name='vehicle-unit-number' required> 
+                        <input class='form-control' type='text' id='vehicle-unit-number' [(ngModel)]='model.vehicleUnitNumber' name='vehicle-unit-number' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-2'>
                     <label for='vehicle-odometer'>10.Odometer</label>
                     <div>
-                        <input class='form-control' type='text' id='vehicle-odometer' [(ngModel)]='vehicleOdometer' name='vehicle-odometer' required> 
+                        <input class='form-control' type='text' id='vehicle-odometer' [(ngModel)]='model.vehicleOdometer' name='vehicle-odometer' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-2'>
                     <label for='vehicle-lic'>11.Lic #</label>
                     <div>
-                        <input class='form-control' type='text' id='vehicle-lic' [(ngModel)]='vehicleLicense' name='vehicle-license' required> 
+                        <input class='form-control' type='text' id='vehicle-lic' [(ngModel)]='model.vehicleLicense' name='vehicle-license' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-1'>
                     <label for='vehicle-license-state'>12.State</label>
                     <div>
-                        <select class='form-control' id='vehicle-license-state' [(ngModel)]='vehicleLicenseState' name='vehicle-license-state'>
+                        <select class='form-control' id='vehicle-license-state' [(ngModel)]='model.vehicleLicenseState' name='vehicle-license-state'>
                             <option *ngFor='let state of states'>{{state}}</option>
                         </select>
                     </div> 
@@ -134,7 +139,7 @@
                 <div class='form-group col-md-2'>
                     <label for='vehicle-decal-number'>13.Decal #</label>
                     <div>
-                        <input class='form-control' type='text' id='vehicle-decal-number' [(ngModel)]='vehicleDecalNumber' name='vehicle-decal-number' required> 
+                        <input class='form-control' type='text' id='vehicle-decal-number' [(ngModel)]='model.vehicleDecalNumber' name='vehicle-decal-number' required> 
                     </div>
                 </div>
             </div><!--/.row-->
@@ -145,13 +150,13 @@
                         <div class='col-xs-6'>
                             <label for='owner-last-name'>14.Owner Last Name</label>
                             <div>
-                                <input class='form-control' type='text' id='owner-last-name' [(ngModel)]='ownerLastName' name='owner-last-name' required> 
+                                <input class='form-control' type='text' id='owner-last-name' [(ngModel)]='model.ownerLastName' name='owner-last-name' required> 
                             </div>
                         </div>
                         <div class='col-xs-6'>
                             <label for='owner-first-name'>First Name</label>
                             <div>
-                                <input class='form-control' type='text' id='owner-first-name' [(ngModel)]='ownerFirstName' name='owner-first-name' required> 
+                                <input class='form-control' type='text' id='owner-first-name' [(ngModel)]='model.ownerFirstName' name='owner-first-name' required> 
                             </div>
                         </div>
                     </div>
@@ -159,7 +164,7 @@
                 <div class='form-group col-md-3'>
                     <label for='owner-address'>15.Owner Street Address</label>
                     <div>
-                        <input class='form-control' type='text' id='owner-address' [(ngModel)]='ownerStreetAddress' name='owner-street-address' required> 
+                        <input class='form-control' type='text' id='owner-address' [(ngModel)]='model.ownerStreetAddress' name='owner-street-address' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-5'>
@@ -167,13 +172,13 @@
                         <div class='col-md-6'>
                             <label for='owner-city'>16.City</label>
                             <div>
-                                <input class='form-control' type='text' id='owner-city' [(ngModel)]='ownerCity' name='owner-city' required> 
+                                <input class='form-control' type='text' id='owner-city' [(ngModel)]='model.ownerCity' name='owner-city' required> 
                             </div>
                         </div>
                         <div class='col-md-2'>
                             <label for='owner-state'>State</label>
                             <div>
-                                <select class='form-control' id='owner-state' [(ngModel)]='ownerState' name='owner-state'>
+                                <select class='form-control' id='owner-state' [(ngModel)]='model.ownerState' name='owner-state'>
                                     <option *ngFor='let state of states'>{{state}}</option>
                                 </select>
                             </div> 
@@ -181,7 +186,7 @@
                         <div class='col-md-4'>
                             <label for='owner-zip'>Zip</label>
                             <div>
-                                <input class='form-control' type='text' id='owner-zip' [(ngModel)]='ownerZip' name='owner-zip' required> 
+                                <input class='form-control' type='text' id='owner-zip' [(ngModel)]='model.ownerZip' name='owner-zip' required> 
                             </div>
                         </div> 
                     </div>
@@ -191,7 +196,7 @@
                 <div class='form-group col-md-2'>
                     <label for='owner-usdot-number'>20.Owner USDOT#</label>
                     <div>
-                        <input class='form-control' type='text' id='owner-usdot-number' [(ngModel)]='ownerUsdotNumber' name='owner-usdot-number' required> 
+                        <input class='form-control' type='text' id='owner-usdot-number' [(ngModel)]='model.ownerUsdotNumber' name='owner-usdot-number' required> 
                     </div>
                 </div>
             </div><!--/.row-->
@@ -202,13 +207,13 @@
                         <div class='col-xs-6'>
                             <label for='carrier-last-name'>17.Carrier Last Name</label>
                             <div>
-                                <input class='form-control' type='text' id='carrier-last-name' [(ngModel)]='carrierLastName' name='carrier-last-name' required> 
+                                <input class='form-control' type='text' id='carrier-last-name' [(ngModel)]='model.carrierLastName' name='carrier-last-name' required> 
                             </div>
                         </div>
                         <div class='col-xs-6'>
                             <label for='carrier-first-name'>First Name</label>
                             <div>
-                                <input class='form-control' type='text' id='carrier-first-name' [(ngModel)]='carrierFirstName' name='carrier-first-name' required> 
+                                <input class='form-control' type='text' id='carrier-first-name' [(ngModel)]='model.carrierFirstName' name='carrier-first-name' required> 
                             </div>
                         </div>
                     </div>
@@ -216,7 +221,7 @@
                 <div class='form-group col-md-3'>
                     <label for='carrier-address'>18.Carrier Street Address</label>
                     <div>
-                        <input class='form-control' type='text' id='carrier-address' [(ngModel)]='carrierStreetAddress' name='carrier-street-address' required> 
+                        <input class='form-control' type='text' id='carrier-address' [(ngModel)]='model.carrierStreetAddress' name='carrier-street-address' required> 
                     </div>
                 </div>
                 <div class='form-group col-md-5'>
@@ -224,13 +229,13 @@
                         <div class='col-md-6'>
                             <label for='carrier-city'>19.City</label>
                             <div>
-                                <input class='form-control' type='text' id='carrier-city' [(ngModel)]='carrierCity' name='carrier-city' required> 
+                                <input class='form-control' type='text' id='carrier-city' [(ngModel)]='model.carrierCity' name='carrier-city' required> 
                             </div>
                         </div>
                         <div class='col-md-2'>
                             <label for='carrier-state'>State</label>
                             <div>
-                                <select class='form-control' id='carrier-state' [(ngModel)]='carrierState' name='carrier-state'>
+                                <select class='form-control' id='carrier-state' [(ngModel)]='model.carrierState' name='carrier-state'>
                                     <option *ngFor='let state of states'>{{state}}</option>
                                 </select>
                             </div> 
@@ -238,7 +243,7 @@
                         <div class='col-md-4'>
                             <label for='carrier-zip'>Zip</label>
                             <div>
-                                <input class='form-control' type='text' id='carrier-zip' [(ngModel)]='carrierZip' name='carrier-zip' required> 
+                                <input class='form-control' type='text' id='carrier-zip' [(ngModel)]='model.carrierZip' name='carrier-zip' required> 
                             </div>
                         </div> 
                     </div>
@@ -248,7 +253,7 @@
                 <div class='form-group col-md-2'>
                     <label for='carrier-usdot-number'>21.Carrier USDOT#</label>
                     <div>
-                        <input class='form-control' type='text' id='carrier-usdot-number' [(ngModel)]='carrierUsdotNumber' name='carrier-usdot-number' required> 
+                        <input class='form-control' type='text' id='carrier-usdot-number' [(ngModel)]='model.carrierUsdotNumber' name='carrier-usdot-number' required> 
                     </div>
                 </div>
             </div><!--/.row-->
