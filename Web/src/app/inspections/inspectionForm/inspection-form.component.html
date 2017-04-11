@@ -25,37 +25,36 @@
                     </div>
                 </div>
             </div><!--/.row-->
-
             <div class='row'>
-                <div class='form-group col-md-3'>
-                    <label for='inspection-address'>2.Insp. Location (Street Address)</label>
+                <div class='form-group col-md-3' [class.has-error]="inspectionAddress.dirty && inspectionAddress.invalid && inspectionAddress.touched">
+                    <label class="control-label" for='inspection-address'>2.Insp. Location (Street Address)</label>
                     <div>
-                        <input class='form-control' [ngClass]="{'has-success': isError}" type='text' id='inspection-address'
+                        <input class='form-control' [class.has-success]='isError' type='text' id='inspection-address'
                             [(ngModel)]='model.inspectionStreetAddress' name='inspection-address'
                             #inspectionAddress="ngModel" required> 
                     </div>
-                    <div [hidden]="inspectionAddress.valid">
+                    <div class="alert alert-danger" *ngIf="inspectionAddress.dirty && inspectionAddress.invalid && inspectionAddress.touched">
                         Inspection Address Is required
                     </div>
                 </div>
-
-                <div class='form-group col-md-5'>
+                <div class='col-md-5'>
                     <div class='row'>
-                        <div class='col-md-6'>
-                            <label for='inspection-city'>3.City</label>
+                        <div class='col-md-6 form-group'>
+                            <label class="control-label" for='inspection-city'>3.City</label>
                             <div>
                                 <input class='form-control' type='text' id='inspection-city' [(ngModel)]='model.inspectionCity' name='inspection-city' required> 
                             </div>
                         </div>
-                        <div class='col-md-2'>
-                            <label for='inspection-state'>State</label>
+                        <div class='col-md-2 form-group' [class.has-error]="model">
+                            <label class='control-label' for='inspection-state'>State</label>
                             <div>
                                 <select class='form-control' id='inspection-state' [(ngModel)]='model.inspectionState' name='inspection-state'>
-                                    <option *ngFor='let state of states'>{{state}}</option>
+                                    <option value="default"></option>
+                                    <option *ngFor='let state of states'>{{ state }}</option>
                                 </select>
                             </div> 
                         </div>
-                        <div class='col-md-4'>
+                        <div class='col-md-4 form-group'>
                             <label for='inspection-zip'>Zip</label>
                             <div>
                                 <input class='form-control' type='text' id='inspection-zip' [(ngModel)]='model.inspectionZip' name='inspection-zip' required> 
@@ -132,6 +131,7 @@
                     <label for='vehicle-license-state'>12.State</label>
                     <div>
                         <select class='form-control' id='vehicle-license-state' [(ngModel)]='model.vehicleLicenseState' name='vehicle-license-state'>
+                            <option default></option>
                             <option *ngFor='let state of states'>{{state}}</option>
                         </select>
                     </div> 
@@ -179,6 +179,7 @@
                             <label for='owner-state'>State</label>
                             <div>
                                 <select class='form-control' id='owner-state' [(ngModel)]='model.ownerState' name='owner-state'>
+                                    <option default></option>
                                     <option *ngFor='let state of states'>{{state}}</option>
                                 </select>
                             </div> 
