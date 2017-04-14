@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { InspectionModel } from '../../models/inspection.model';
+import { FormPoster } from '../../services/form-poster.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
     templateUrl: './inspection-form.component.html',
@@ -14,8 +16,11 @@ export class InspectionFormComponent {
                         'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
     model = new InspectionModel();
     isError = true;
-
     isInspectionStateValid: boolean;
+
+    constructor(private FormPoster: FormPoster){
+
+    }
 
     onFormChange(): void {
         console.log(this.model.toString());
@@ -27,5 +32,9 @@ export class InspectionFormComponent {
         } else {
             this.isInspectionStateValid = true;
         }
+    }
+
+    onSubmit(form: NgForm){
+        console.log(this.model);
     }
 }

@@ -3,7 +3,7 @@
         {{title}}
     </div>
     <div class='panel-body'>
-        <form #form="ngForm" novalidate (change)='onFormChange()' (ngSubmit)='onSubmit()' #inspectionForm='ngForm'>
+        <form #form="ngForm" novalidate (submit)='onSubmit()' #inspectionForm='ngForm'>
             <h2>Inspection</h2>
             <div class='row'>
                 <div class='form-group col-md-2'>
@@ -24,71 +24,96 @@
                         <input class='form-control' type='time' id='inspection-time-out' [(ngModel)]='model.inspectionTimeOut' name='inspection-time-out' required> 
                     </div>
                 </div>
-            </div><!--/.row-->
+            </div>
             <div class='row'>
-                <div class='form-group col-md-3' [class.has-error]="inspectionAddress.dirty && inspectionAddress.invalid && inspectionAddress.touched">
+                <div class='form-group col-md-3' [class.has-error]="inspectionAddress.dirty && inspectionAddress.invalid">
                     <label class="control-label" for='inspection-address'>2.Insp. Location (Street Address)</label>
                     <div>
-                        <input class='form-control' [class.has-success]='isError' type='text' id='inspection-address'
+                        <input class='form-control' type='text' id='inspection-address'
                             [(ngModel)]='model.inspectionStreetAddress' name='inspection-address'
                             #inspectionAddress="ngModel" required> 
-                    </div>
-                    <div class="alert alert-danger" *ngIf="inspectionAddress.dirty && inspectionAddress.invalid && inspectionAddress.touched">
-                        Inspection Address Is required
                     </div>
                 </div>
                 <div class='col-md-5'>
                     <div class='row'>
-                        <div class='col-md-6 form-group'>
+                        <div class='col-md-6 form-group' [class.has-error]="inspectionCity.dirty && inspectionCity.invalid">
                             <label class="control-label" for='inspection-city'>3.City</label>
                             <div>
-                                <input class='form-control' type='text' id='inspection-city' [(ngModel)]='model.inspectionCity' name='inspection-city' required> 
+                                <input class='form-control' type='text' id='inspection-city'
+                                    [(ngModel)]='model.inspectionCity' name='inspection-city'
+                                    #inspectionCity="ngModel" required> 
                             </div>
                         </div>
-                        <div class='col-md-2 form-group' [class.has-error]="model">
+                        <div class='col-md-2 form-group' [class.has-error]="inspectionState.dirty && model.inspectionState === 'default'">
                             <label class='control-label' for='inspection-state'>State</label>
                             <div>
-                                <select class='form-control' id='inspection-state' [(ngModel)]='model.inspectionState' name='inspection-state'>
+                                <select class='form-control' id='inspection-state'
+                                    [(ngModel)]='model.inspectionState' name='inspection-state'
+                                    #inspectionState="ngModel" required>
                                     <option value="default"></option>
                                     <option *ngFor='let state of states'>{{ state }}</option>
                                 </select>
-                            </div> 
+                            </div>
+
                         </div>
-                        <div class='col-md-4 form-group'>
-                            <label for='inspection-zip'>Zip</label>
+                        <div class='col-md-4 form-group' [class.has-error]="inspectionZip.dirty && inspectionZip.invalid">
+                            <label class="control-label" for='inspection-zip'>Zip</label>
                             <div>
-                                <input class='form-control' type='text' id='inspection-zip' [(ngModel)]='model.inspectionZip' name='inspection-zip' required> 
+                                <input class='form-control' type='text' id='inspection-zip'
+                                    [(ngModel)]='model.inspectionZip' name='inspection-zip'
+                                    #inspectionZip="ngModel" required> 
                             </div>
                         </div> 
                     </div>
                 </div>
-            </div><!--/.row-->
-                <div class='row'>
-                    <div class='form-group col-md-6'>
-                        <div class='row'>
-                            <div class='col-md-6'>
-                                <label for='inspector-last-name'>22.Inspector's Last Name</label>
-                                <div>
-                                    <input class='form-control' type='text' id='inspector-last-name' [(ngModel)]='model.inspectorLastName' name='inspector-last-name' required> 
-                                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <div class='row'>
+                        <div class='col-md-6 form-group' [class.has-error]="inspectorLastName.dirty && inspectorLastName.invalid">
+                            <button type="button" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-search"></i></button>
+                            <label class="control-label" for='inspector-last-name'>22.Inspector's Last Name</label>
+                            <div>
+                                <input class='form-control' type='text' id='inspector-last-name'
+                                    [(ngModel)]='model.inspectorLastName' name='inspector-last-name'
+                                    #inspectorLastName="ngModel" required> 
                             </div>
-                            <div class='col-md-6'>
-                                <label for='inspector-first-name'>First Name</label>
-                                <div>
-                                    <input class='form-control' type='text' id='inspector-first-name' [(ngModel)]='model.inspectorFirstName' name='inspector-first-name' required> 
-                                </div>
+                        </div>
+                        <div class='col-md-6 form-group' [class.has-error]="inspectorFirstName.dirty && inspectorFirstName.invalid">
+                            <label class="control-label" for='inspector-first-name'>First Name</label>
+                            <div>
+                                <input class='form-control' type='text' id='inspector-first-name'
+                                    [(ngModel)]='model.inspectorFirstName' name='inspector-first-name'
+                                    #inspectorFirstName="ngModel" required> 
                             </div>
                         </div>
                     </div>
-                </div><!--/.row-->
+                </div>
+            </div>
             <div class='row'>
-                <div class='form-group col-md-3'>
-                    <label for='inspector-num'>23.Inspector #</label>
+                <div class='form-group col-md-3' [class.has-error]="inspectorNumber.dirty && inspectorNumber.invalid">
+                    <label class="control-label" for='inspector-num'>23.Inspector #</label>
                     <div>
-                        <input class='form-control' type='text' id='inspector-num' [(ngModel)]='model.inspectorNumber' name='inspector-number' required> 
+                        <input class='form-control' type='text' id='inspector-num'
+                            [(ngModel)]='model.inspectorNumber' name='inspector-number'
+                            #inspectorNumber="ngModel" required> 
                     </div>
-                </div> 
+                </div>
             </div><!--row-->
+            <div class="row" *ngIf="!form.valid">
+                <div class="col-md-6 alert alert-danger">
+                    <ul>
+                        <li *ngIf="inspectionAddress.dirty && inspectionAddress.invalid">Inspection Street Address Is required</li>
+                        <li *ngIf="inspectionCity.dirty && inspectionCity.invalid">Inspection City Is required</li>
+                        <li *ngIf="inspectionState.dirty && model.inspectionState === 'default'">Inspection State is required</li>
+                        <li *ngIf="inspectionZip.dirty && inspectionZip.invalid">Inspection Zip Is required</li>
+                        <li *ngIf="inspectorLastName.dirty && inspectorLastName.invalid">Inspector's Last Name Is required</li>
+                        <li *ngIf="inspectorFirstName.dirty && inspectorFirstName.invalid">Inspector's First Name Is required</li>
+                        <li *ngIf="inspectorNumber.dirty && inspectorNumber.invalid">Inspector's Number Is required</li>
+                    </ul>
+                </div>
+            </div>
+<!--
             <h2>Vehicle</h2>
             <div class='row'>
                 <div class='form-group col-md-2'>
@@ -142,7 +167,7 @@
                         <input class='form-control' type='text' id='vehicle-decal-number' [(ngModel)]='model.vehicleDecalNumber' name='vehicle-decal-number' required> 
                     </div>
                 </div>
-            </div><!--/.row-->
+            </div>
             <h2>Owner</h2>
             <div class='row'>
                 <div class='form-group col-md-4'>
@@ -192,7 +217,7 @@
                         </div> 
                     </div>
                 </div>
-            </div><!--/.row-->
+            </div>
             <div class='row'>
                 <div class='form-group col-md-2'>
                     <label for='owner-usdot-number'>20.Owner USDOT#</label>
@@ -200,7 +225,7 @@
                         <input class='form-control' type='text' id='owner-usdot-number' [(ngModel)]='model.ownerUsdotNumber' name='owner-usdot-number' required> 
                     </div>
                 </div>
-            </div><!--/.row-->
+            </div>
             <h1>Carrier</h1>
             <div class='row'>
                 <div class='form-group col-md-4'>
@@ -249,7 +274,7 @@
                         </div> 
                     </div>
                 </div>
-            </div><!--/.row-->
+            </div>
             <div class='row'>
                 <div class='form-group col-md-2'>
                     <label for='carrier-usdot-number'>21.Carrier USDOT#</label>
@@ -257,8 +282,10 @@
                         <input class='form-control' type='text' id='carrier-usdot-number' [(ngModel)]='model.carrierUsdotNumber' name='carrier-usdot-number' required> 
                     </div>
                 </div>
-            </div><!--/.row-->
-            <button type='submit' class='btn btn-success' [disabled]='!inspectionForm.form.valid'>Submit</button>
+            </div>
+            -->
+            <!--<button type='submit' class='btn btn-success' [disabled]='!inspectionForm.form.valid'>Submit</button>-->
+            <button type='submit' class='btn btn-success'>Submit</button>
         </form>
     </div>
 </div>

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
+import { FormPoster } from './services/form-poster.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -32,7 +33,7 @@ import { VehicleDetailComponent } from './vehicles/vehicleDetail/vehicle-detail.
       { path: '**', redirectTo: '', pathMatch: 'full'}
     ])
   ],
-  providers: [],
+  providers: [FormPoster],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
