@@ -14,27 +14,35 @@ export class InspectionFormComponent {
                         'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ',
                         'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
                         'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
+
     model = new InspectionModel();
-    isError = true;
-    isInspectionStateValid: boolean;
+    formSubmitClicked: boolean = false;
+    isInspectionStateValid: boolean = false;
 
-    constructor(private FormPoster: FormPoster){
+    constructor(private formPoster: FormPoster){
 
-    }
-
-    onFormChange(): void {
-        console.log(this.model.toString());
     }
 
     validateInspectionState(event): void {
         if (this.model.inspectionState === 'default') {
-            this.isInspectionStateValid = false;
-        } else {
             this.isInspectionStateValid = true;
+        } else {
+            this.isInspectionStateValid = false;
         }
     }
 
-    onSubmit(form: NgForm){
-        console.log(this.model);
+    onSubmit(form: NgForm) {
+        console.log('onSubmit()', this.model);
+        if (!this.formSubmitClicked) {
+            this.formSubmitClicked = true;
+        }
+        if (form.invalid) {
+            return;
+        }
+        this.formPoster.postInspectionForm(this.model)
+            .subscribe(
+                data => console.log('success: ', data),
+                err => console.log('error: ', err)
+            );
     }
 }

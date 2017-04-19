@@ -3,30 +3,36 @@
         {{title}}
     </div>
     <div class='panel-body'>
-        <form #myForm="ngForm" novalidate (submit)='onSubmit()' #inspectionForm='ngForm'>
+        <form #myForm="ngForm" (submit)='onSubmit(myForm)' #inspectionForm='ngForm' novalidate>
             <h2>Inspection</h2>
             <div class='row'>
-                <div class='form-group col-md-2'>
-                    <label for='date-input'>1.Date</label>
-                    <div>
-                        <input class='form-control' type='date' id='date-input' [(ngModel)]='model.inspectionDate' name='inspection-date' required>
+                <div class='form-group col-md-2' [class.has-error]="formSubmitClicked && inspectionDate.invalid">
+                    <label class="control-label" for='date-input'>1.Date</label>
+                    <div> 
+                        <input class='form-control' type='date' id='date-input'
+                            [(ngModel)]='model.inspectionDate' name='inspection-date'
+                            #inspectionDate="ngModel" required>
                     </div>
                 </div>
-                <div class='form-group col-md-2'>
-                    <label for='inspection-time-in'>4.Time in</label>
+                <div class='form-group col-md-2' [class.has-error]="formSubmitClicked && inspectionTimeIn.invalid">
+                    <label class="control-label" for='inspection-time-in'>4.Time in</label>
                     <div>
-                        <input class='form-control' type='time' id='inspection-time-in' [(ngModel)]='model.inspectionTimeIn' name='inspection-time-in' required> 
+                        <input class='form-control' type='time' id='inspection-time-in'
+                            [(ngModel)]='model.inspectionTimeIn' name='inspection-time-in'
+                            #inspectionTimeIn="ngModel" required> 
                     </div>
                 </div>
-                <div class='form-group col-md-2'>
-                    <label for='inspection-time-out'>5.Time out</label>
+                <div class='form-group col-md-2' [class.has-error]="formSubmitClicked && inspectionTimeOut.invalid">
+                    <label class="control-label" for='inspection-time-out'>5.Time out</label>
                     <div>
-                        <input class='form-control' type='time' id='inspection-time-out' [(ngModel)]='model.inspectionTimeOut' name='inspection-time-out' required> 
+                        <input class='form-control' type='time' id='inspection-time-out'
+                            [(ngModel)]='model.inspectionTimeOut' name='inspection-time-out'
+                            #inspectionTimeOut="ngModel" required> 
                     </div>
                 </div>
             </div>
             <div class='row'>
-                <div class='form-group col-md-3' [class.has-error]="inspectionAddress.dirty && inspectionAddress.invalid">
+                <div class='form-group col-md-3' [class.has-error]="formSubmitClicked && inspectionAddress.invalid">
                     <label class="control-label" for='inspection-address'>2.Insp. Location (Street Address)</label>
                     <div>
                         <input class='form-control' type='text' id='inspection-address'
@@ -36,7 +42,7 @@
                 </div>
                 <div class='col-md-5'>
                     <div class='row'>
-                        <div class='col-md-6 form-group' [class.has-error]="inspectionCity.dirty && inspectionCity.invalid">
+                        <div class='col-md-6 form-group' [class.has-error]="formSubmitClicked && inspectionCity.invalid">
                             <label class="control-label" for='inspection-city'>3.City</label>
                             <div>
                                 <input class='form-control' type='text' id='inspection-city'
@@ -44,19 +50,23 @@
                                     #inspectionCity="ngModel" required> 
                             </div>
                         </div>
-                        <div class='col-md-2 form-group' [class.has-error]="inspectionState.dirty && model.inspectionState === 'default'">
+                        <div class='col-md-2 form-group' [class.has-error]="formSubmitClicked && model.inspectionState === 'default'">
                             <label class='control-label' for='inspection-state'>State</label>
                             <div>
-                                <select class='form-control' id='inspection-state'
-                                    [(ngModel)]='model.inspectionState' name='inspection-state'
-                                    #inspectionState="ngModel" required>
+                                <select class='form-control'
+                                    id='inspection-state'
+                                    [(ngModel)]='model.inspectionState'
+                                    name='inspection-state'
+                                    #inspectionState="ngModel"
+                                    required>
+
                                     <option value="default"></option>
                                     <option *ngFor='let state of states'>{{ state }}</option>
                                 </select>
                             </div>
 
                         </div>
-                        <div class='col-md-4 form-group' [class.has-error]="inspectionZip.dirty && inspectionZip.invalid">
+                        <div class='col-md-4 form-group' [class.has-error]="formSubmitClicked && inspectionZip.invalid">
                             <label class="control-label" for='inspection-zip'>Zip</label>
                             <div>
                                 <input class='form-control' type='text' id='inspection-zip'
@@ -70,7 +80,7 @@
             <div class='row'>
                 <div class='col-md-6'>
                     <div class='row'>
-                        <div class='col-md-6 form-group' [class.has-error]="inspectorLastName.dirty && inspectorLastName.invalid">
+                        <div class='col-md-6 form-group' [class.has-error]="formSubmitClicked && inspectorLastName.invalid">
                             <button type="button" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-search"></i></button>
                             <label class="control-label" for='inspector-last-name'>22.Inspector's Last Name</label>
                             <div>
@@ -79,7 +89,7 @@
                                     #inspectorLastName="ngModel" required> 
                             </div>
                         </div>
-                        <div class='col-md-6 form-group' [class.has-error]="inspectorFirstName.dirty && inspectorFirstName.invalid">
+                        <div class='col-md-6 form-group' [class.has-error]="formSubmitClicked && inspectorFirstName.invalid">
                             <label class="control-label" for='inspector-first-name'>First Name</label>
                             <div>
                                 <input class='form-control' type='text' id='inspector-first-name'
@@ -91,7 +101,7 @@
                 </div>
             </div>
             <div class='row'>
-                <div class='form-group col-md-3' [class.has-error]="inspectorNumber.dirty && inspectorNumber.invalid">
+                <div class='form-group col-md-3' [class.has-error]="formSubmitClicked && inspectorNumber.invalid">
                     <label class="control-label" for='inspector-num'>23.Inspector #</label>
                     <div>
                         <input class='form-control' type='text' id='inspector-num'
@@ -101,15 +111,18 @@
                 </div>
             </div><!--row-->
             <div class="row">
-                <div class="col-md-6 alert">
+                <div class="col-md-6 alert alert-danger" *ngIf="formSubmitClicked && myForm.invalid">
                     <ul>
-                        <li class="alert-danger" *ngIf="inspectionAddress.dirty && inspectionAddress.invalid">Inspection Street Address Is required</li>
-                        <li *ngIf="inspectionCity.dirty && inspectionCity.invalid">Inspection City Is required</li>
-                        <li *ngIf="inspectionState.dirty && model.inspectionState === 'default'">Inspection State is required</li>
-                        <li *ngIf="inspectionZip.dirty && inspectionZip.invalid">Inspection Zip Is required</li>
-                        <li *ngIf="inspectorLastName.dirty && inspectorLastName.invalid">Inspector's Last Name Is required</li>
-                        <li *ngIf="inspectorFirstName.dirty && inspectorFirstName.invalid">Inspector's First Name Is required</li>
-                        <li *ngIf="inspectorNumber.dirty && inspectorNumber.invalid">Inspector's Number Is required</li>
+                        <li *ngIf="inspectionDate.invalid">Inspection Date is required </li>
+                        <li *ngIf="inspectionTimeIn.invalid">Inspection Time In is required </li>
+                        <li *ngIf="inspectionTimeOut.invalid">Inspection Time Out is required </li>
+                        <li *ngIf="inspectionAddress.invalid">Inspection Street Address is required</li>
+                        <li *ngIf="inspectionCity.invalid">Inspection City is required</li>
+                        <li *ngIf="model.inspectionState === 'default'">Inspection State is required</li>
+                        <li *ngIf="inspectionZip.invalid">Inspection Zip is required</li>
+                        <li *ngIf="inspectorLastName.invalid">Inspector's Last Name is required</li>
+                        <li *ngIf="inspectorFirstName.invalid">Inspector's First Name is required</li>
+                        <li *ngIf="inspectorNumber.invalid">Inspector's Number is required</li>
                     </ul>
                 </div>
             </div>

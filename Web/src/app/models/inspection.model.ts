@@ -2,7 +2,7 @@ export class InspectionModel {
     inspectionDate: string;
     inspectionStreetAddress: string;
     inspectionCity: string;
-    inspectionState: string;
+    inspectionState: string = 'default';
     inspectionZip: string;
     inspectionTimeIn: string;
     inspectionTimeOut: string;
