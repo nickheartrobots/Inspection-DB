@@ -3,7 +3,7 @@
         {{title}}
     </div>
     <div class='panel-body'>
-        <form #form="ngForm" novalidate (submit)='onSubmit()' #inspectionForm='ngForm'>
+        <form #myForm="ngForm" novalidate (submit)='onSubmit()' #inspectionForm='ngForm'>
             <h2>Inspection</h2>
             <div class='row'>
                 <div class='form-group col-md-2'>
@@ -100,10 +100,10 @@
                     </div>
                 </div>
             </div><!--row-->
-            <div class="row" *ngIf="!form.valid">
-                <div class="col-md-6 alert alert-danger">
+            <div class="row">
+                <div class="col-md-6 alert">
                     <ul>
-                        <li *ngIf="inspectionAddress.dirty && inspectionAddress.invalid">Inspection Street Address Is required</li>
+                        <li class="alert-danger" *ngIf="inspectionAddress.dirty && inspectionAddress.invalid">Inspection Street Address Is required</li>
                         <li *ngIf="inspectionCity.dirty && inspectionCity.invalid">Inspection City Is required</li>
                         <li *ngIf="inspectionState.dirty && model.inspectionState === 'default'">Inspection State is required</li>
                         <li *ngIf="inspectionZip.dirty && inspectionZip.invalid">Inspection Zip Is required</li>
