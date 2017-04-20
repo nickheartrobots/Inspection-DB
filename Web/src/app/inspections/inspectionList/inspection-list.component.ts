@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InspectionModel } from '../../models/inspection.model';
+import { InspectionService } from '../../services/inspection.service';
 
 @Component({
     templateUrl: `./inspection-list.component.html`,
@@ -7,22 +8,17 @@ import { InspectionModel } from '../../models/inspection.model';
 })
 export class InspectionListComponent implements OnInit {
     title: string = 'Inspection List';
-    inspections: InspectionModel[] = [
-        {
-            id: 1,
-            date: '01/01/2017',
-            streetAddress: '3412 Woodbine Ln',
-            city: 'Brooklyn Center',
-            state: 'MN',
-            zip: '55429',
-            timeIn: '12:15PM',
-            timeOut: '12:45PM'
-        }
-    ];
+    inspections: InspectionModel[];
 
-    constructor() {}
+    constructor(private inspectionService: InspectionService) {}
 
     ngOnInit(): void {
-        console.log('ngOnInit()')
+        console.log('ngOnInit()');
+
+        this.inspectionService.getInspections()
+            .subscribe(
+                data => this.inspections = data,
+                err => console.error('error: ', err)
+            );
     }
 }

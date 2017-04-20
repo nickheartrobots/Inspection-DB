@@ -12,7 +12,7 @@ export class InspectionService {
 
     private extractData(res: Response) {
         const body = res.json();
-        return body.fields || {};
+        return body || [];
     }
 
     private handleError(error: any) {
@@ -33,6 +33,11 @@ export class InspectionService {
     }
 
     getInspections(): Observable<InspectionModel[]> {
-        return null;
+        const headers = new Headers({ 'Content-Type': 'application/json' });
+        const options = new RequestOptions({ headers: headers });
+
+        return this.http.get('http://localhost:57893/api/Inspection')
+            .map(this.extractData)
+            .catch(this.handleError);
     }
 }

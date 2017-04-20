@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using WebAPI.Models;
 using WebAPI.Repository;
 
 namespace WebAPI.Controllers
 {
+    [EnableCorsAttribute("http://localhost:4200", "*", "*")]
     public class InspectionController : ApiController
     {
         // GET: api/Inspection
