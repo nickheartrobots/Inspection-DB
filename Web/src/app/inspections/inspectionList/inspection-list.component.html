@@ -3,33 +3,30 @@
 		{{title}}
 	</div>
 	<div class='panel-body'>
-		<div class='row'>
-			<div class='col-md-2'>Filter by:</div>
-			<div class='col-md-4'>
-				<input type='text' [(ngModel)]='listFilter' />
-			</div>
-		</div>
-		<div class='row'>
-			<div class='col-md-6'>
-				<h3>Filtered by: {{listFilter}}</h3>
-			</div>
-		</div>
 		<div class='table-responsive'>
-			<table class='table' *ngIf='vehicles && vehicles.length'>
+			<table class='table' *ngIf='inspections && inspections.length'>
 				<thead>
 					<tr>
-						<th>Decal #</th>
-						<th>Make</th>
-						<th>Year</th>
-						<th>License</th>
+						<th>ID</th>
+						<th>Date</th>
+						<th>Time In</th>
+						<th>Time Out</th>
+						<th>Street Address</th>
+						<th>City</th>
+						<th>State</th>
+						<th>Zip</th>
 					</tr>
 				</thead>
 				<tbody>
-                    <tr *ngFor='let vehicle of vehicles'>
-                        <td><a [routerLink]="['/vehicle/', vehicle.decalNumber]">{{vehicle.decalNumber}}</a></td>
-                        <td>{{vehicle.make}}</td>
-                        <td>{{vehicle.year}}</td>
-                        <td>{{vehicle.licensePlateNumber}}</td>
+                    <tr *ngFor='let inspection of inspections'>
+                        <td><a [routerLink]="['/vehicle/', inspection.id]">{{inspection.id}}</a></td>
+                        <td>{{inspection.date}}</td>
+                        <td>{{inspection.timeIn}}</td>
+                        <td>{{inspection.timeOut}}</td>
+                        <td>{{inspection.streetAddress}}</td>
+                        <td>{{inspection.city}}</td>
+                        <td>{{inspection.state}}</td>
+                        <td>{{inspection.zip}}</td>
                     </tr>
 				</tbody>
 			</table>

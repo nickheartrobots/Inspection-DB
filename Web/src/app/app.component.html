@@ -4,7 +4,13 @@
         <div class='container fluid'  style='max-width:1440px; width: 100%;'>
             <ul class='nav navbar-nav'>
                 <li><a [routerLink]="['']">Home</a></li>
-                <li><a [routerLink]="['inspection']">Inspection</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dowpdown-toggle" data-toggle="dropdown" roll="button" aria-haspopup="true" aria-expanded="false">Inspections <i class="caret"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a [routerLink]="['new-inspection']">New Inspection</a></li>
+                        <li><a [routerLink]="['inspection-list']">Inspection List</a></li>
+                    </ul>
+                </li>
                 <li><a [routerLink]="['']">Carriers</a></li>
                 <li><a [routerLink]="['']">Owners</a></li>
                 <li><a [routerLink]="['/vehicles']">Vehicles</a></li>

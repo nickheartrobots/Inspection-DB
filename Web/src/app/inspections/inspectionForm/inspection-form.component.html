@@ -10,7 +10,7 @@
                     <label class="control-label" for='date-input'>1.Date</label>
                     <div> 
                         <input class='form-control' type='date' id='date-input'
-                            [(ngModel)]='model.inspectionDate' name='inspection-date'
+                            [(ngModel)]='inspectionModel.date' name='inspection-date'
                             #inspectionDate="ngModel" required>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                     <label class="control-label" for='inspection-time-in'>4.Time in</label>
                     <div>
                         <input class='form-control' type='time' id='inspection-time-in'
-                            [(ngModel)]='model.inspectionTimeIn' name='inspection-time-in'
+                            [(ngModel)]='inspectionModel.timeIn' name='inspection-time-in'
                             #inspectionTimeIn="ngModel" required> 
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                     <label class="control-label" for='inspection-time-out'>5.Time out</label>
                     <div>
                         <input class='form-control' type='time' id='inspection-time-out'
-                            [(ngModel)]='model.inspectionTimeOut' name='inspection-time-out'
+                            [(ngModel)]='inspectionModel.timeOut' name='inspection-time-out'
                             #inspectionTimeOut="ngModel" required> 
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                     <label class="control-label" for='inspection-address'>2.Insp. Location (Street Address)</label>
                     <div>
                         <input class='form-control' type='text' id='inspection-address'
-                            [(ngModel)]='model.inspectionStreetAddress' name='inspection-address'
+                            [(ngModel)]='inspectionModel.streetAddress' name='inspection-address'
                             #inspectionAddress="ngModel" required> 
                     </div>
                 </div>
@@ -46,16 +46,16 @@
                             <label class="control-label" for='inspection-city'>3.City</label>
                             <div>
                                 <input class='form-control' type='text' id='inspection-city'
-                                    [(ngModel)]='model.inspectionCity' name='inspection-city'
+                                    [(ngModel)]='inspectionModel.city' name='inspection-city'
                                     #inspectionCity="ngModel" required> 
                             </div>
                         </div>
-                        <div class='col-md-2 form-group' [class.has-error]="formSubmitClicked && model.inspectionState === 'default'">
+                        <div class='col-md-2 form-group' [class.has-error]="formSubmitClicked && inspectionModel.state === 'default'">
                             <label class='control-label' for='inspection-state'>State</label>
                             <div>
                                 <select class='form-control'
                                     id='inspection-state'
-                                    [(ngModel)]='model.inspectionState'
+                                    [(ngModel)]='inspectionModel.state'
                                     name='inspection-state'
                                     #inspectionState="ngModel"
                                     required>
@@ -70,7 +70,7 @@
                             <label class="control-label" for='inspection-zip'>Zip</label>
                             <div>
                                 <input class='form-control' type='text' id='inspection-zip'
-                                    [(ngModel)]='model.inspectionZip' name='inspection-zip'
+                                    [(ngModel)]='inspectionModel.zip' name='inspection-zip'
                                     #inspectionZip="ngModel" required> 
                             </div>
                         </div> 
@@ -85,7 +85,7 @@
                             <label class="control-label" for='inspector-last-name'>22.Inspector's Last Name</label>
                             <div>
                                 <input class='form-control' type='text' id='inspector-last-name'
-                                    [(ngModel)]='model.inspectorLastName' name='inspector-last-name'
+                                    [(ngModel)]='inspectorModel.lastName' name='inspector-last-name'
                                     #inspectorLastName="ngModel" required> 
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                             <label class="control-label" for='inspector-first-name'>First Name</label>
                             <div>
                                 <input class='form-control' type='text' id='inspector-first-name'
-                                    [(ngModel)]='model.inspectorFirstName' name='inspector-first-name'
+                                    [(ngModel)]='inspectorModel.firstName' name='inspector-first-name'
                                     #inspectorFirstName="ngModel" required> 
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                     <label class="control-label" for='inspector-num'>23.Inspector #</label>
                     <div>
                         <input class='form-control' type='text' id='inspector-num'
-                            [(ngModel)]='model.inspectorNumber' name='inspector-number'
+                            [(ngModel)]='inspectorModel.number' name='inspector-number'
                             #inspectorNumber="ngModel" required> 
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                         <li *ngIf="inspectionTimeOut.invalid">Inspection Time Out is required </li>
                         <li *ngIf="inspectionAddress.invalid">Inspection Street Address is required</li>
                         <li *ngIf="inspectionCity.invalid">Inspection City is required</li>
-                        <li *ngIf="model.inspectionState === 'default'">Inspection State is required</li>
+                        <li *ngIf="inspectionModel.inspectionState === 'default'">Inspection State is required</li>
                         <li *ngIf="inspectionZip.invalid">Inspection Zip is required</li>
                         <li *ngIf="inspectorLastName.invalid">Inspector's Last Name is required</li>
                         <li *ngIf="inspectorFirstName.invalid">Inspector's First Name is required</li>

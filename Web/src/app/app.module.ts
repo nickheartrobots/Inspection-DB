@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
-import { FormPoster } from './services/form-poster.service';
+import { InspectionService } from './services/inspection.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { InspectionFormComponent } from './inspections/inspectionForm/inspection-form.component';
+import { InspectionListComponent } from './inspections/inspectionList/inspection-list.component';
 import { VehiclesComponent } from './vehicles/vehicleList/vehicle-list.component';
 import { VehicleDetailComponent } from './vehicles/vehicleDetail/vehicle-detail.component';
 
@@ -17,6 +18,7 @@ import { VehicleDetailComponent } from './vehicles/vehicleDetail/vehicle-detail.
     AppComponent,
     HomeComponent,
     InspectionFormComponent,
+    InspectionListComponent,
     VehiclesComponent,
     VehicleDetailComponent
   ],
@@ -27,13 +29,14 @@ import { VehicleDetailComponent } from './vehicles/vehicleDetail/vehicle-detail.
     MaterialModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
-      { path: 'inspection', component: InspectionFormComponent},
+      { path: 'new-inspection', component: InspectionFormComponent},
+      { path: 'inspection-list', component: InspectionListComponent},
       { path: 'vehicles', component: VehiclesComponent },
       { path: 'vehicle/:id', component: VehicleDetailComponent},
       { path: '**', redirectTo: '', pathMatch: 'full'}
     ])
   ],
-  providers: [FormPoster],
+  providers: [InspectionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

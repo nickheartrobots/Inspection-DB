@@ -5,7 +5,7 @@ import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class FormPoster {
+export class InspectionService {
     constructor(private http: Http) {
 
     }
@@ -30,5 +30,9 @@ export class FormPoster {
         return this.http.post('http://localhost:3100/postemployee', body, options)
             .map(this.extractData)
             .catch(this.handleError);
+    }
+
+    getInspections(): Observable<InspectionModel[]> {
+        return null;
     }
 }
