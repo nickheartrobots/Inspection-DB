@@ -1,16 +1,16 @@
-﻿namespace WebAPI.Models
+﻿using System;
+
+namespace WebAPI.Models
 {
     public class Inspection
     {
-        public string InspectionDate { get; set; }
-        public string InspectionStreetAddress { get; set; }
-        public string InspectionCity { get; set; }
-        public string InspectionState { get; set; }
-        public string InspectionZip { get; set; }
-        public string InspectionTimeIn { get; set; }
-        public string InspectionTimeOut { get; set; }
-        public string InspectorLastName { get; set; }
-        public string InspectorFirstName { get; set; }
-        public string InspectorNumber { get; set; }
+        public int Id { get; set; }
+        public string Date { get; set; }
+        public string StreetAddress { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zip { get; set; }
+        public string TimeIn { get; set; }
+        public string TimeOut { get; set; }
     }
 }
