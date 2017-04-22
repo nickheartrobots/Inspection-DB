@@ -1,0 +1,26 @@
+﻿[
+  {
+    "Id": 1001,
+    "StreetAddress1": "3412 Woodbine Ln",
+    "StreetAddress2": "",
+    "City": "Brooklyn Center",
+    "State": "MN",
+    "Zip": "55429"
+  },
+  {
+    "Id": 1002,
+    "StreetAddress1": "5050 Russell Ave N",
+    "StreetAddress2": "",
+    "City": "Minneapolis",
+    "State": "MN",
+    "Zip": "55430"
+  },
+  {
+    "Id": 1003,
+    "StreetAddress1": "3016 Sumter Ave N",
+    "StreetAddress2": "",
+    "City": "Crystal",
+    "State": "MN",
+    "Zip": "55427"
+  }
+]

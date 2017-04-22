@@ -1,12 +1,72 @@
 ﻿[
   {
-    "Id": 1,
-    "Date": "04/20/2017",
-    "StreetAddress": "3412 Woodbine Ln",
-    "City": "Brooklyn Center",
-    "State": "MN",
-    "Zip": "55429",
+    "Id": 10001,
+    "Date": "01/03/2017",
+    "AddressId":  1001,
     "TimeIn": "12:15PM",
     "TimeOut": "12:45PM"
+  },
+  {
+    "Id": 10002,
+    "Date": "01/05/2017",
+    "AddressId": 1001,
+    "TimeIn": "4:45PM",
+    "TimeOut": "5:27PM"
+  },
+  {
+    "Id": 10003,
+    "Date": "01/23/2017",
+    "AddressId": 1001,
+    "TimeIn": "8:25AM",
+    "TimeOut": "9:00AM"
+  },
+  {
+    "Id": 10004,
+    "Date": "02/01/2017",
+    "AddressId": 1001,
+    "TimeIn": "9:51AM",
+    "TimeOut": "11:10AM"
+  },
+  {
+    "Id": 10005,
+    "Date": "02/08/2017",
+    "AddressId": 1001,
+    "TimeIn": "02:00PM",
+    "TimeOut": "02:45PM"
+  },
+  {
+    "Id": 10006,
+    "Date": "02/11/2017",
+    "AddressId": 1001,
+    "TimeIn": "06:15AM",
+    "TimeOut": "07:03AM"
+  },
+  {
+    "Id": 10007,
+    "Date": "02/13/2017",
+    "AddressId": 1001,
+    "TimeIn": "03:07PM",
+    "TimeOut": "03:16PM"
+  },
+  {
+    "Id": 10008,
+    "Date": "02/24/2017",
+    "AddressId": 1001,
+    "TimeIn": "03:30PM",
+    "TimeOut": "03:57PM"
+  },
+  {
+    "Id": 10009,
+    "Date": "02/25/2017",
+    "AddressId": 1001,
+    "TimeIn": "07:30PM",
+    "TimeOut": "08:08PM"
+  },
+  {
+    "Id": 10010,
+    "Date": "02/28/2017",
+    "AddressId": 1001,
+    "TimeIn": "09:17AM",
+    "TimeOut": "09:32AM"
   }
 ]

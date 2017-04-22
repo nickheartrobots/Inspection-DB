@@ -12,6 +12,7 @@ export class InspectionService {
 
     private extractData(res: Response) {
         const body = res.json();
+        console.log('response: ', body);
         return body || [];
     }
 
