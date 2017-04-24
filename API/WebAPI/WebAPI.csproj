@@ -231,6 +231,18 @@
     <Compile Include="Migrations\201704241536238_Refactor.Designer.cs">
       <DependentUpon>201704241536238_Refactor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704241548309_UpdateInspectionModel.cs" />
+    <Compile Include="Migrations\201704241548309_UpdateInspectionModel.Designer.cs">
+      <DependentUpon>201704241548309_UpdateInspectionModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704241557198_Required.cs" />
+    <Compile Include="Migrations\201704241557198_Required.Designer.cs">
+      <DependentUpon>201704241557198_Required.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704241559122_StringLength.cs" />
+    <Compile Include="Migrations\201704241559122_StringLength.Designer.cs">
+      <DependentUpon>201704241559122_StringLength.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -311,6 +323,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704241536238_Refactor.resx">
       <DependentUpon>201704241536238_Refactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704241548309_UpdateInspectionModel.resx">
+      <DependentUpon>201704241548309_UpdateInspectionModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704241557198_Required.resx">
+      <DependentUpon>201704241557198_Required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704241559122_StringLength.resx">
+      <DependentUpon>201704241559122_StringLength.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
