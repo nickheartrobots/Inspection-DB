@@ -243,6 +243,26 @@
     <Compile Include="Migrations\201704241559122_StringLength.Designer.cs">
       <DependentUpon>201704241559122_StringLength.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704241840498_fk.cs" />
+    <Compile Include="Migrations\201704241840498_fk.Designer.cs">
+      <DependentUpon>201704241840498_fk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704241845434_PopulateInspectors.cs" />
+    <Compile Include="Migrations\201704241845434_PopulateInspectors.Designer.cs">
+      <DependentUpon>201704241845434_PopulateInspectors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704241854419_PopulateAddresses.cs" />
+    <Compile Include="Migrations\201704241854419_PopulateAddresses.Designer.cs">
+      <DependentUpon>201704241854419_PopulateAddresses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704241911560_PopulateInspections.cs" />
+    <Compile Include="Migrations\201704241911560_PopulateInspections.Designer.cs">
+      <DependentUpon>201704241911560_PopulateInspections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704241917065_ChangeInspectorColNames.cs" />
+    <Compile Include="Migrations\201704241917065_ChangeInspectorColNames.Designer.cs">
+      <DependentUpon>201704241917065_ChangeInspectorColNames.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -253,6 +273,7 @@
     <Compile Include="Models\Inspector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Repository\InspectionsRepository.cs" />
     <Compile Include="Repository\InspectionRepository.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
@@ -332,6 +353,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704241559122_StringLength.resx">
       <DependentUpon>201704241559122_StringLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704241840498_fk.resx">
+      <DependentUpon>201704241840498_fk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704241845434_PopulateInspectors.resx">
+      <DependentUpon>201704241845434_PopulateInspectors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704241854419_PopulateAddresses.resx">
+      <DependentUpon>201704241854419_PopulateAddresses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704241911560_PopulateInspections.resx">
+      <DependentUpon>201704241911560_PopulateInspections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704241917065_ChangeInspectorColNames.resx">
+      <DependentUpon>201704241917065_ChangeInspectorColNames.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

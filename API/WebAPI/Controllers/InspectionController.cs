@@ -12,8 +12,8 @@ namespace WebAPI.Controllers
         // GET: api/Inspection
         public IEnumerable<Inspection> Get()
         {
-            var inspectionRepository = new InspectionRepository();
-            return inspectionRepository.Retrieve();
+            var inspectionsRepository = new InspectionsRepository();
+            return inspectionsRepository.Read();
         }
 
         // GET: api/Inspection/5

@@ -8,14 +8,14 @@ namespace WebAPI.Models
 
         [Required]
         [StringLength(255)]
-        public string InspectorLastName { get; set; }
+        public string LastName { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string InspectorFirstName { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         [StringLength(255)]
-        public string InspectorNumber { get; set; }
+        public string Number { get; set; }
     }
 }
