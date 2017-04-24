@@ -1,10 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 
 namespace WebAPI.Models
 {
     public class WebAPIContextInitializer : DropCreateDatabaseAlways<WebAPIContext>
     {
+        public WebAPIContextInitializer()
+        {
+            Console.WriteLine("Test");
+        }
+
         protected override void Seed(WebAPIContext context)
         {
             var inspections = new List<Inspection>

@@ -10,8 +10,14 @@ namespace WebAPI
     {
         protected void Application_Start()
         {
-            System.Data.Entity.Database.SetInitializer(
-                new WebAPIContextInitializer());
+            //System.Data.Entity.Database.SetInitializer(
+            //    new WebAPIContextInitializer());
+
+            using (var db = new WebAPIContext())
+            {
+                System.Data.Entity.Database.SetInitializer(new WebAPIContextInitializer());
+                db.Database.Initialize(true);
+            }
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
