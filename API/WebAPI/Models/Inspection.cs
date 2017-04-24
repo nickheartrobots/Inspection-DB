@@ -7,5 +7,7 @@
         public int AddressId { get; set; }
         public string TimeIn { get; set; }
         public string TimeOut { get; set; }
+        public Address Address { get; set; }
+        public Inspector Inspector { get; set; }
     }
 }
