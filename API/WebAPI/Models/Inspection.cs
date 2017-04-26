@@ -18,14 +18,10 @@ namespace WebAPI.Models
         public DateTime TimeOut { get; set; }
 
         [Required]
-        [ForeignKey("Address")]
-        public int AddressId { get; set; }
-        public Address Address { get; set; }
+        public virtual Address Address { get; set; }
 
         [Required]
-        [ForeignKey("Inspector")]
-        public int InspectorId { get; set; }
-        public Inspector Inspector { get; set; }
+        public virtual Inspector Inspector { get; set; }
 
     }
 }
