@@ -15,13 +15,12 @@ export class InspectionFormComponent {
                         'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
                         'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
     inspectionModel: InspectionModel = new InspectionModel();
-    inspectorModel: InspectorModel = new InspectorModel();
     public formSubmitClicked: boolean = false;
     public isInspectionStateValid: boolean = false;
     public title: string = 'Inspection Form';
 
     constructor(private inspectionService: InspectionService){
-        this.inspectionModel.state = 'default';
+        this.inspectionModel.address.state = 'default';
     }
 
     onSubmit(form: NgForm) {

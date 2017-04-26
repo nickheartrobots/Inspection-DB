@@ -21,14 +21,14 @@ export class InspectionService {
         return Observable.throw(error.statusText);
     }
 
-    postInspectionForm(inspection: InspectionModel):Observable<any>{
+    postInspectionForm(inspection: InspectionModel): Observable<any>{
         const body = JSON.stringify(inspection);
         const headers = new Headers({ 'Content-Type': 'application/json' });
         const options = new RequestOptions({ headers: headers });
 
-        console.log('FormPoster.postInspectionForm()', inspection);
+        console.log('FormPoster.postInspectionForm()', body);
 
-        return this.http.post('http://localhost:3100/postemployee', body, options)
+        return this.http.post('http://localhost:57893/api/Inspection', body, options)
             .map(this.extractData)
             .catch(this.handleError);
     }

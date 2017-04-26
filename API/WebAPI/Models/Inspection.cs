@@ -9,13 +9,16 @@ namespace WebAPI.Models
         public int Id { get; set; }
 
         [Required]
-        public DateTime Date { get; set; }
+        [StringLength(255)]
+        public string Date { get; set; }
 
         [Required]
-        public DateTime TimeIn { get; set; }
+        [StringLength(255)]
+        public string TimeIn { get; set; }
 
         [Required]
-        public DateTime TimeOut { get; set; }
+        [StringLength(255)]
+        public string TimeOut { get; set; }
 
         [Required]
         public virtual Address Address { get; set; }

@@ -1,12 +1,18 @@
+import { InspectorModel } from './inspector.model';
+import { AddressModel } from './address.model';
+
 export class InspectionModel {
     id: number;
     date: string;
-    streetAddress: string;
-    city: string;
-    state: string;
-    zip: string;
     timeIn: string;
     timeOut: string;
+    inspector: InspectorModel;
+    address: AddressModel;
+
+    constructor() {
+        this.inspector = new InspectorModel();
+        this.address = new AddressModel();
+    }
 
     // vehicleMake: string;
     // vehicleYear: number;

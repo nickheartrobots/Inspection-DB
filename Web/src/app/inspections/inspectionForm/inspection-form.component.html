@@ -36,7 +36,7 @@
                     <label class="control-label" for='inspection-address'>2.Insp. Location (Street Address)</label>
                     <div>
                         <input class='form-control' type='text' id='inspection-address'
-                            [(ngModel)]='inspectionModel.streetAddress' name='inspection-address'
+                            [(ngModel)]='inspectionModel.address.streetAddress' name='inspection-address'
                             #inspectionAddress="ngModel" required> 
                     </div>
                 </div>
@@ -46,16 +46,16 @@
                             <label class="control-label" for='inspection-city'>3.City</label>
                             <div>
                                 <input class='form-control' type='text' id='inspection-city'
-                                    [(ngModel)]='inspectionModel.city' name='inspection-city'
+                                    [(ngModel)]='inspectionModel.address.city' name='inspection-city'
                                     #inspectionCity="ngModel" required> 
                             </div>
                         </div>
-                        <div class='col-md-2 form-group' [class.has-error]="formSubmitClicked && inspectionModel.state === 'default'">
+                        <div class='col-md-2 form-group' [class.has-error]="formSubmitClicked && inspectionModel.address.state === 'default'">
                             <label class='control-label' for='inspection-state'>State</label>
                             <div>
                                 <select class='form-control'
                                     id='inspection-state'
-                                    [(ngModel)]='inspectionModel.state'
+                                    [(ngModel)]='inspectionModel.address.state'
                                     name='inspection-state'
                                     #inspectionState="ngModel"
                                     required>
@@ -70,7 +70,7 @@
                             <label class="control-label" for='inspection-zip'>Zip</label>
                             <div>
                                 <input class='form-control' type='text' id='inspection-zip'
-                                    [(ngModel)]='inspectionModel.zip' name='inspection-zip'
+                                    [(ngModel)]='inspectionModel.address.zip' name='inspection-zip'
                                     #inspectionZip="ngModel" required> 
                             </div>
                         </div> 
@@ -85,7 +85,7 @@
                             <label class="control-label" for='inspector-last-name'>22.Inspector's Last Name</label>
                             <div>
                                 <input class='form-control' type='text' id='inspector-last-name'
-                                    [(ngModel)]='inspectorModel.lastName' name='inspector-last-name'
+                                    [(ngModel)]='inspectionModel.inspector.lastName' name='inspector-last-name'
                                     #inspectorLastName="ngModel" required> 
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                             <label class="control-label" for='inspector-first-name'>First Name</label>
                             <div>
                                 <input class='form-control' type='text' id='inspector-first-name'
-                                    [(ngModel)]='inspectorModel.firstName' name='inspector-first-name'
+                                    [(ngModel)]='inspectionModel.inspector.firstName' name='inspector-first-name'
                                     #inspectorFirstName="ngModel" required> 
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                     <label class="control-label" for='inspector-num'>23.Inspector #</label>
                     <div>
                         <input class='form-control' type='text' id='inspector-num'
-                            [(ngModel)]='inspectorModel.number' name='inspector-number'
+                            [(ngModel)]='inspectionModel.inspector.number' name='inspector-number'
                             #inspectorNumber="ngModel" required> 
                     </div>
                 </div>
@@ -297,8 +297,7 @@
                 </div>
             </div>
             -->
-            <!--<button type='submit' class='btn btn-success' [disabled]='!inspectionForm.form.valid'>Submit</button>-->
-            <button type='submit' class='btn btn-success'>Submit</button>
+            <button type='submit' class='btn btn-success' [disabled]='!inspectionForm.form.valid'>Submit</button>
         </form>
     </div>
 </div>

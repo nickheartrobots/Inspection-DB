@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using WebAPI.Models;
@@ -25,6 +26,9 @@ namespace WebAPI.Controllers
         // POST: api/Inspection
         public void Post([FromBody]string value)
         {
+             var inspection = JsonConvert.DeserializeObject<Inspection>(value);
+            var inspectionsRepository = new InspectionsRepository();
+            inspectionsRepository.Create(inspection);
         }
 
         // PUT: api/Inspection/5

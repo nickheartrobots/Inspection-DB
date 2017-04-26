@@ -14,6 +14,12 @@ namespace WebAPI.Repository
             _context = new ApplicationDbContext();
         }
 
+        internal void Create(Inspection inspection)
+        {
+            _context.Inspection.Add(inspection);
+            _context.SaveChanges();
+        }
+
         internal List<Inspection> Read()
         {
             var inspections = _context.Inspection.ToList();
