@@ -14,7 +14,13 @@
                 <li><a [routerLink]="['']">Carriers</a></li>
                 <li><a [routerLink]="['']">Owners</a></li>
                 <li><a [routerLink]="['/vehicles']">Vehicles</a></li>
-                <li><a [routerLink]="['']">Inspectors</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dowpdown-toggle" data-toggle="dropdown" roll="button" aria-haspopup="true" aria-expanded="false">Inspectors<i class="caret"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a [routerLink]="['inspector-detail']">Inspector Detail</a></li>
+                        <li><a [routerLink]="['inspector-list']">Inspection List</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>

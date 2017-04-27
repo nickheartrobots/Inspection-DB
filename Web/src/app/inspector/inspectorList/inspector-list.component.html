@@ -1,0 +1,27 @@
+<div class='panel panel-primary'>
+	<div class='panel-heading'>
+		{{title}}
+	</div>
+	<div class='panel-body'>
+		<div class='table-responsive'>
+			<table class='table' *ngIf='inspectors && inspectors.length'>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Last Name</th>
+						<th>First Name</th>
+						<th>Inspector Number</th>
+					</tr>
+				</thead>
+				<tbody>
+                    <tr *ngFor='let inspector of inspectors'>
+                        <td><a [routerLink]="['/inspector-detail/', inspector.id]">{{inspector.id}}</a></td>
+                        <td>{{inspector.lastName}}</td>
+                        <td>{{inspector.firstName}}</td>
+                        <td>{{inspector.number}}</td>
+                    </tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

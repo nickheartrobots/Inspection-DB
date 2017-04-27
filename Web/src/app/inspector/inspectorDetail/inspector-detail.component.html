@@ -1,0 +1,48 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{title}}
+    </div>
+    <div class='panel-body'>
+        <form #form="ngForm" (submit)='onSubmit(form)' #inspectionForm='ngForm' novalidate>
+            <div class='row'>
+                <div class='col-md-6 col-lg-4 form-group' [class.has-error]="formSubmitClicked && inspectorLastName.invalid">
+                    <button type="button" class="btn btn-default btn-xs" (click)="search()"><i class="glyphicon glyphicon-search"></i></button>
+                    <label class="control-label" for='inspector-last-name'>22.Inspector's Last Name</label>
+                    <div>
+                        <input class='form-control' type='text' id='inspector-last-name'
+                            [(ngModel)]='model.lastName' name='inspector-last-name'
+                            #inspectorLastName="ngModel" required> 
+                    </div>
+                </div>
+                <div class='col-md-6 col-lg-4 form-group' [class.has-error]="formSubmitClicked && inspectorFirstName.invalid">
+                    <label class="control-label" for='inspector-first-name'>First Name</label>
+                    <div>
+                        <input class='form-control' type='text' id='inspector-first-name'
+                            [(ngModel)]='model.firstName' name='inspector-first-name'
+                            #inspectorFirstName="ngModel" required> 
+                    </div>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='form-group col-md-6 col-lg-4' [class.has-error]="formSubmitClicked && inspectorNumber.invalid">
+                    <label class="control-label" for='inspector-num'>23.Inspector #</label>
+                    <div>
+                        <input class='form-control' type='text' id='inspector-num'
+                            [(ngModel)]='model.number' name='inspector-number'
+                            #inspectorNumber="ngModel" required> 
+                    </div>
+                </div>
+            </div><!--row-->
+            <div class="row">
+                <div class="col-md-6 alert alert-danger" *ngIf="formSubmitClicked && form.invalid">
+                    <ul>
+                        <li *ngIf="inspectorLastName.invalid">Inspector's Last Name is required</li>
+                        <li *ngIf="inspectorFirstName.invalid">Inspector's First Name is required</li>
+                        <li *ngIf="inspectorNumber.invalid">Inspector's Number is required</li>
+                    </ul>
+                </div>
+            </div>
+            <button type='submit' class='btn btn-success'>Submit</button>
+        </form>
+    </div>
+</div>

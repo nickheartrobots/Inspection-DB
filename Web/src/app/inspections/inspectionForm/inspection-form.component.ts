@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { InspectionModel } from '../../models/inspection.model';
 import { InspectorModel } from '../../models/inspector.model';
 import { InspectionService } from '../../services/inspection.service';

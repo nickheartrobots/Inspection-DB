@@ -14,7 +14,7 @@ namespace WebAPI.Controllers
         // GET: api/Inspection
         public IEnumerable<Inspection> Get()
         {
-            var inspectionsRepository = new InspectionsRepository();
+            var inspectionsRepository = new InspectionRepository();
             return inspectionsRepository.Read();
         }
 
@@ -27,26 +27,24 @@ namespace WebAPI.Controllers
         // POST: api/Inspection
         public HttpResponseMessage Post([FromBody]Inspection inspection)
         {
-            var inspectionsRepository = new InspectionsRepository();
+            var inspectionsRepository = new InspectionRepository();
             inspectionsRepository.Create(inspection);
 
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
         // PUT: api/Inspection/5
-        public void Put(int id, [FromBody]string value)
+        public HttpResponseMessage Put(int id, [FromBody]string value)
         {
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
         // DELETE: api/Inspection/5
         public void Delete(int id)
         {
+            var inspectionsRepository = new InspectionRepository();
+            inspectionsRepository.Delete(id);
         }
-    }
-
-    public class MyModel
-    {
-        public string Hello { get; set; }
-        public string World { get; set; }
     }
 }
