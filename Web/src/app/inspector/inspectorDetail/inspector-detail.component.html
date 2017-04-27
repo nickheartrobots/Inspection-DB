@@ -6,7 +6,6 @@
         <form #form="ngForm" (submit)='onSubmit(form)' #inspectionForm='ngForm' novalidate>
             <div class='row'>
                 <div class='col-md-6 col-lg-4 form-group' [class.has-error]="formSubmitClicked && inspectorLastName.invalid">
-                    <button type="button" class="btn btn-default btn-xs" (click)="search()"><i class="glyphicon glyphicon-search"></i></button>
                     <label class="control-label" for='inspector-last-name'>22.Inspector's Last Name</label>
                     <div>
                         <input class='form-control' type='text' id='inspector-last-name'

@@ -11,6 +11,7 @@ export class InspectorDetailComponent {
     title = 'Inspector Detail';
     model: InspectorModel;
     formSubmitClicked: boolean;
+    searchParam: string;
 
     constructor(private inspectorServices: InspectorService){
         this.model = new InspectorModel();
@@ -35,6 +36,6 @@ export class InspectorDetailComponent {
             .subscribe(
                 data => console.log('success: ', data),
                 err => console.log('error: ', err)
-            )
+            );
     }
 }
