@@ -1,5 +1,6 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using WebAPI.Models;
@@ -24,11 +25,12 @@ namespace WebAPI.Controllers
         }
 
         // POST: api/Inspection
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody]Inspection inspection)
         {
-             var inspection = JsonConvert.DeserializeObject<Inspection>(value);
             var inspectionsRepository = new InspectionsRepository();
             inspectionsRepository.Create(inspection);
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
         // PUT: api/Inspection/5
@@ -40,5 +42,11 @@ namespace WebAPI.Controllers
         public void Delete(int id)
         {
         }
+    }
+
+    public class MyModel
+    {
+        public string Hello { get; set; }
+        public string World { get; set; }
     }
 }

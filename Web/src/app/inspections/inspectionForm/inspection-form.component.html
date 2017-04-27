@@ -36,7 +36,7 @@
                     <label class="control-label" for='inspection-address'>2.Insp. Location (Street Address)</label>
                     <div>
                         <input class='form-control' type='text' id='inspection-address'
-                            [(ngModel)]='inspectionModel.address.streetAddress' name='inspection-address'
+                            [(ngModel)]='inspectionModel.address.streetAddress1' name='inspection-address'
                             #inspectionAddress="ngModel" required> 
                     </div>
                 </div>
@@ -297,7 +297,8 @@
                 </div>
             </div>
             -->
-            <button type='submit' class='btn btn-success' [disabled]='!inspectionForm.form.valid'>Submit</button>
+            <!--<button type='submit' class='btn btn-success' [disabled]='!inspectionForm.form.valid'>Submit</button>-->
+            <button type='submit' class='btn btn-success'>Submit</button>
         </form>
     </div>
 </div>
