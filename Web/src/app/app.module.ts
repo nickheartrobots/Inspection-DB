@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
-import { InspectionService } from './services/inspection.service';
+import { DataService } from './services/data.service';
 import { InspectorService } from './services/inspector.service';
 
 import { AppComponent } from './app.component';
@@ -41,11 +41,12 @@ import { VehicleDetailComponent } from './vehicles/vehicleDetail/vehicle-detail.
       { path: 'inspector-detail/:id', component: InspectorDetailComponent},
       { path: 'inspector-list', component: InspectorListComponent},
       { path: 'vehicles', component: VehiclesComponent },
+      { path: 'vehicle', component: VehicleDetailComponent},
       { path: 'vehicle/:id', component: VehicleDetailComponent},
       { path: '**', redirectTo: '', pathMatch: 'full'}
     ])
   ],
-  providers: [InspectionService, InspectorService],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

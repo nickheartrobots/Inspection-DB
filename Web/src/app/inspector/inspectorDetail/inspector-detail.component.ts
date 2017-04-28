@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { InspectorService } from '../../services/inspector.service';
+import { DataService } from '../../services/data.service';
 import { InspectorModel } from '../../models/inspector.model';
 import { NgForm } from '@angular/forms';
 
@@ -13,7 +13,7 @@ export class InspectorDetailComponent {
     formSubmitClicked: boolean;
     searchParam: string;
 
-    constructor(private inspectorServices: InspectorService){
+    constructor(private dataServices: DataService){
         this.model = new InspectorModel();
         this.formSubmitClicked = false;
     }
@@ -32,7 +32,7 @@ export class InspectorDetailComponent {
             return;
         }
 
-        this.inspectorServices.postInspectorForm(this.model)
+        this.dataServices.postInspectorForm(this.model)
             .subscribe(
                 data => console.log('success: ', data),
                 err => console.log('error: ', err)

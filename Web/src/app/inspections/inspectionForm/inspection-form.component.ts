@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InspectionModel } from '../../models/inspection.model';
 import { InspectorModel } from '../../models/inspector.model';
-import { InspectionService } from '../../services/inspection.service';
+import { DataService } from '../../services/data.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -19,7 +19,7 @@ export class InspectionFormComponent {
     public isInspectionStateValid: boolean = false;
     public title: string = 'Inspection Form';
 
-    constructor(private inspectionService: InspectionService){
+    constructor(private dataService: DataService) {
         this.inspectionModel.address.state = 'default';
     }
 
@@ -31,7 +31,7 @@ export class InspectionFormComponent {
         if (form.invalid) {
             return;
         }
-        this.inspectionService.postInspectionForm(this.inspectionModel)
+        this.dataService.postInspectionForm(this.inspectionModel)
             .subscribe(
                 data => console.log('success: ', data),
                 err => console.log('error: ', err)
