@@ -8,6 +8,7 @@ namespace WebAPI.Models
         public DbSet<Inspection> Inspection { get; set; }
         public DbSet<Address> Address { get; set; }
         public DbSet<Inspector> Inspector { get; set; }
+        public DbSet<Vehicle> Vehicle { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

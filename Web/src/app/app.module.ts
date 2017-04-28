@@ -34,7 +34,8 @@ import { VehicleDetailComponent } from './vehicles/vehicleDetail/vehicle-detail.
     MaterialModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
-      { path: 'new-inspection', component: InspectionFormComponent},
+      { path: 'inspection-detail', component: InspectionFormComponent},
+      { path: 'inspection-detail/:id', component: InspectionFormComponent},
       { path: 'inspection-list', component: InspectionListComponent},
       { path: 'inspector-detail', component: InspectorDetailComponent},
       { path: 'inspector-detail/:id', component: InspectorDetailComponent},

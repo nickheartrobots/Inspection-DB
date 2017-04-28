@@ -19,7 +19,7 @@
 				</thead>
 				<tbody>
                     <tr *ngFor='let inspection of inspections'>
-                        <td><a [routerLink]="['/vehicle/', inspection.id]">{{inspection.id}}</a></td>
+                        <td><a [routerLink]="['/inspection-detail/', inspection.id]">{{inspection.id}}</a></td>
                         <td>{{inspection.date}}</td>
                         <td>{{inspection.timeIn}}</td>
                         <td>{{inspection.timeOut}}</td>
