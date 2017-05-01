@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -32,7 +34,10 @@ namespace WebAPI.Controllers
             var vehicleRepository = new VehicleRepository();
             vehicleRepository.Create(vehicle);
 
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            var response = new HttpResponseMessage(HttpStatusCode.OK);
+            response.Content = new StringContent(JsonConvert.SerializeObject(vehicle));
+
+            return response;
         }
 
         // PUT: api/Vehicle/5

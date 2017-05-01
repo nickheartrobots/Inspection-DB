@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { DataService } from './services/data.service';
-import { InspectorService } from './services/inspector.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -40,9 +39,9 @@ import { VehicleDetailComponent } from './vehicles/vehicleDetail/vehicle-detail.
       { path: 'inspector-detail', component: InspectorDetailComponent},
       { path: 'inspector-detail/:id', component: InspectorDetailComponent},
       { path: 'inspector-list', component: InspectorListComponent},
-      { path: 'vehicles', component: VehiclesComponent },
-      { path: 'vehicle', component: VehicleDetailComponent},
-      { path: 'vehicle/:id', component: VehicleDetailComponent},
+      { path: 'vehicle-list', component: VehiclesComponent },
+      { path: 'vehicle-detail', component: VehicleDetailComponent},
+      { path: 'vehicle-detail/:id', component: VehicleDetailComponent},
       { path: '**', redirectTo: '', pathMatch: 'full'}
     ])
   ],

@@ -5,6 +5,6 @@ export class VehicleModel {
     license: string;
     licenseState: string;
     odometer: number;
-    unitNumber: number;
+    unitNumber: string;
     vin: string;
 }

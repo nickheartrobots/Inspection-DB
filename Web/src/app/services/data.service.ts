@@ -62,4 +62,8 @@ export class DataService {
     getVehicles(): Observable<VehicleModel[]> {
         return this.getObject('http://localhost:57893/api/Vehicle');
     }
+
+    postVehicleForm(vehicle: VehicleModel): Observable<any>{
+        return this.postObject(vehicle, 'http://localhost:57893/api/Vehicle');
+    }
  }
