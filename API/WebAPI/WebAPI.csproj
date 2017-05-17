@@ -221,73 +221,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704241517166_InitialModel.cs" />
-    <Compile Include="Migrations\201704241517166_InitialModel.Designer.cs">
-      <DependentUpon>201704241517166_InitialModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704241529211_AddModels.cs" />
-    <Compile Include="Migrations\201704241529211_AddModels.Designer.cs">
-      <DependentUpon>201704241529211_AddModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704241536238_Refactor.cs" />
-    <Compile Include="Migrations\201704241536238_Refactor.Designer.cs">
-      <DependentUpon>201704241536238_Refactor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704241548309_UpdateInspectionModel.cs" />
-    <Compile Include="Migrations\201704241548309_UpdateInspectionModel.Designer.cs">
-      <DependentUpon>201704241548309_UpdateInspectionModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704241557198_Required.cs" />
-    <Compile Include="Migrations\201704241557198_Required.Designer.cs">
-      <DependentUpon>201704241557198_Required.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704241559122_StringLength.cs" />
-    <Compile Include="Migrations\201704241559122_StringLength.Designer.cs">
-      <DependentUpon>201704241559122_StringLength.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704241840498_fk.cs" />
-    <Compile Include="Migrations\201704241840498_fk.Designer.cs">
-      <DependentUpon>201704241840498_fk.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704241845434_PopulateInspectors.cs" />
-    <Compile Include="Migrations\201704241845434_PopulateInspectors.Designer.cs">
-      <DependentUpon>201704241845434_PopulateInspectors.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704241854419_PopulateAddresses.cs" />
-    <Compile Include="Migrations\201704241854419_PopulateAddresses.Designer.cs">
-      <DependentUpon>201704241854419_PopulateAddresses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704241911560_PopulateInspections.cs" />
-    <Compile Include="Migrations\201704241911560_PopulateInspections.Designer.cs">
-      <DependentUpon>201704241911560_PopulateInspections.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704241917065_ChangeInspectorColNames.cs" />
-    <Compile Include="Migrations\201704241917065_ChangeInspectorColNames.Designer.cs">
-      <DependentUpon>201704241917065_ChangeInspectorColNames.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704261427254_Virtual.cs" />
-    <Compile Include="Migrations\201704261427254_Virtual.Designer.cs">
-      <DependentUpon>201704261427254_Virtual.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704261510236_StringDateTime.cs" />
-    <Compile Include="Migrations\201704261510236_StringDateTime.Designer.cs">
-      <DependentUpon>201704261510236_StringDateTime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704261512479_StringLength1.cs" />
-    <Compile Include="Migrations\201704261512479_StringLength1.Designer.cs">
-      <DependentUpon>201704261512479_StringLength1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704281453194_Vehicle.cs" />
-    <Compile Include="Migrations\201704281453194_Vehicle.Designer.cs">
-      <DependentUpon>201704281453194_Vehicle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704281502150_PopulateVehicles.cs" />
-    <Compile Include="Migrations\201704281502150_PopulateVehicles.Designer.cs">
-      <DependentUpon>201704281502150_PopulateVehicles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704282011445_VehicleStuff.cs" />
-    <Compile Include="Migrations\201704282011445_VehicleStuff.Designer.cs">
-      <DependentUpon>201704282011445_VehicleStuff.cs</DependentUpon>
+    <Compile Include="Migrations\201705171534358_init.cs" />
+    <Compile Include="Migrations\201705171534358_init.Designer.cs">
+      <DependentUpon>201705171534358_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -364,65 +300,17 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704241517166_InitialModel.resx">
-      <DependentUpon>201704241517166_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704241529211_AddModels.resx">
-      <DependentUpon>201704241529211_AddModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704241536238_Refactor.resx">
-      <DependentUpon>201704241536238_Refactor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704241548309_UpdateInspectionModel.resx">
-      <DependentUpon>201704241548309_UpdateInspectionModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704241557198_Required.resx">
-      <DependentUpon>201704241557198_Required.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704241559122_StringLength.resx">
-      <DependentUpon>201704241559122_StringLength.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704241840498_fk.resx">
-      <DependentUpon>201704241840498_fk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704241845434_PopulateInspectors.resx">
-      <DependentUpon>201704241845434_PopulateInspectors.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704241854419_PopulateAddresses.resx">
-      <DependentUpon>201704241854419_PopulateAddresses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704241911560_PopulateInspections.resx">
-      <DependentUpon>201704241911560_PopulateInspections.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704241917065_ChangeInspectorColNames.resx">
-      <DependentUpon>201704241917065_ChangeInspectorColNames.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704261427254_Virtual.resx">
-      <DependentUpon>201704261427254_Virtual.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704261510236_StringDateTime.resx">
-      <DependentUpon>201704261510236_StringDateTime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704261512479_StringLength1.resx">
-      <DependentUpon>201704261512479_StringLength1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704281453194_Vehicle.resx">
-      <DependentUpon>201704281453194_Vehicle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704281502150_PopulateVehicles.resx">
-      <DependentUpon>201704281502150_PopulateVehicles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704282011445_VehicleStuff.resx">
-      <DependentUpon>201704282011445_VehicleStuff.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705171534358_init.resx">
+      <DependentUpon>201705171534358_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

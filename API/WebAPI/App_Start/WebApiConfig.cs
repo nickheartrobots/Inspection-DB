@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Serialization;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace WebAPI
 {
@@ -16,7 +17,10 @@ namespace WebAPI
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            config.EnableCors();
+            var origins = "http://localhost:4200";
+            var headers = "*";
+            var methods = "GET, POST, PUT, DELETE";
+            config.EnableCors(new EnableCorsAttribute(origins, headers, methods));
 
             var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
             config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
