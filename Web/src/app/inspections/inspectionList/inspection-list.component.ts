@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InspectionModel } from '../../models/inspection.model';
-import { InspectionService } from '../../services/inspection.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
     templateUrl: `./inspection-list.component.html`,
@@ -10,12 +10,12 @@ export class InspectionListComponent implements OnInit {
     title: string = 'Inspection List';
     inspections: InspectionModel[];
 
-    constructor(private inspectionService: InspectionService) {}
+    constructor(private dataService: DataService) {}
 
     ngOnInit(): void {
         console.log('ngOnInit()');
 
-        this.inspectionService.getInspections()
+        this.dataService.getInspections()
             .subscribe(
                 data => this.inspections = data,
                 err => console.error('error: ', err)

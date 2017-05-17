@@ -3,33 +3,30 @@
 		{{title}}
 	</div>
 	<div class='panel-body'>
-		<div class='row'>
-			<div class='col-md-2'>Filter by:</div>
-			<div class='col-md-4'>
-				<input type='text' [(ngModel)]='listFilter' />
-			</div>
-		</div>
-		<div class='row'>
-			<div class='col-md-6'>
-				<h3>Filtered by: {{listFilter}}</h3>
-			</div>
-		</div>
 		<div class='table-responsive'>
 			<table class='table' *ngIf='vehicles && vehicles.length'>
 				<thead>
 					<tr>
+						<th>Vin</th>
 						<th>Decal #</th>
 						<th>Make</th>
 						<th>Year</th>
 						<th>License</th>
+						<th>State</th>
+						<th>Unit #</th>
+						<th>Odometer</th>
 					</tr>
 				</thead>
 				<tbody>
                     <tr *ngFor='let vehicle of vehicles'>
-                        <td><a [routerLink]="['/vehicle/', vehicle.decalNumber]">{{vehicle.decalNumber}}</a></td>
-                        <td>{{vehicle.make}}</td>
-                        <td>{{vehicle.year}}</td>
-                        <td>{{vehicle.licensePlateNumber}}</td>
+                        <td><a [routerLink]="['/vehicle/', vehicle.vin]">{{vehicle.vin}}</a></td>
+						<td>{{ vehicle.decalNumber }}</td>
+                        <td>{{ vehicle.make }}</td>
+                        <td>{{ vehicle.year }}</td>
+                        <td>{{ vehicle.license }}</td>
+						<td>{{ vehicle.licenseState }}</td>
+						<td>{{ vehicle.unitNumber }}</td>
+						<td>{{ vehicle.odometer }}</td>
                     </tr>
 				</tbody>
 			</table>
