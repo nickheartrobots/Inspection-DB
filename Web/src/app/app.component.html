@@ -7,13 +7,19 @@
                 <li class="dropdown">
                     <a href="#" class="dowpdown-toggle" data-toggle="dropdown" roll="button" aria-haspopup="true" aria-expanded="false">Inspections <i class="caret"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a [routerLink]="['new-inspection']">New Inspection</a></li>
+                        <li><a [routerLink]="['inspection-detail']">Inspection Detail</a></li>
                         <li><a [routerLink]="['inspection-list']">Inspection List</a></li>
                     </ul>
                 </li>
                 <li><a [routerLink]="['']">Carriers</a></li>
                 <li><a [routerLink]="['']">Owners</a></li>
-                <li><a [routerLink]="['/vehicles']">Vehicles</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dowpdown-toggle" data-toggle="dropdown" roll="button" aria-haspopup="true" aria-expanded="false">Vehicles<i class="caret"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a [routerLink]="['vehicle-detail']">Vehicle Detail</a></li>
+                        <li><a [routerLink]="['vehicle-list']">Vehlicle List</a></li>
+                    </ul>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dowpdown-toggle" data-toggle="dropdown" roll="button" aria-haspopup="true" aria-expanded="false">Inspectors<i class="caret"></i></a>
                     <ul class="dropdown-menu">
