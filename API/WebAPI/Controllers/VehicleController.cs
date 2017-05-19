@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Common.Models;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using WebAPI.Models;
 using WebAPI.Repository;
 
 namespace WebAPI.Controllers
