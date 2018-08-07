@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Common.Models
 {
@@ -24,5 +25,7 @@ namespace Common.Models
         [Required]
         public virtual Inspector Inspector { get; set; }
 
+        [Required]
+        public DateTime CreatedOn { get; set; }
     }
 }

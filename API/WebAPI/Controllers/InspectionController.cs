@@ -1,7 +1,5 @@
 ﻿using Common.Models;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
+using System;
 using System.Web.Http;
 using WebAPI.Repository;
 
@@ -10,10 +8,10 @@ namespace WebAPI.Controllers
     public class InspectionController : ApiController
     {
         // GET: api/Inspection
-        public IEnumerable<Inspection> Get()
+        public IHttpActionResult Get()
         {
             var inspectionsRepository = new InspectionRepository();
-            return inspectionsRepository.Read();
+            return Ok(inspectionsRepository.Read());
         }
 
         // GET: api/Inspection/5
@@ -23,26 +21,28 @@ namespace WebAPI.Controllers
         }
 
         // POST: api/Inspection
-        public HttpResponseMessage Post([FromBody]Inspection inspection)
+        public IHttpActionResult Post([FromBody]Inspection inspection)
         {
+            inspection.CreatedOn = DateTime.Now;
             var inspectionsRepository = new InspectionRepository();
             inspectionsRepository.Create(inspection);
 
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return Ok();
         }
 
         // PUT: api/Inspection/5
-        public HttpResponseMessage Put(int id, [FromBody]string value)
+        public IHttpActionResult Put(int id, [FromBody]string value)
         {
-
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return Ok();
         }
 
         // DELETE: api/Inspection/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
             var inspectionsRepository = new InspectionRepository();
             inspectionsRepository.Delete(id);
+
+            return Ok();
         }
     }
 }

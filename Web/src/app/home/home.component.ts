@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 
 export class HomeComponent {
     title: string = 'Home';
+    jumboTitle: string = 'USDOT Home';
+    jumboText: string = 'This app is for connecting to the USDOT Inspection Database and for creating new entries in the Database';
 }

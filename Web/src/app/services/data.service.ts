@@ -24,7 +24,14 @@ export class DataService {
     }
 
     getObject(path: string){
-        const headers = new Headers({ 'Content-Type': undefined, 'Accept': 'application/json' });
+        // const headers = new Headers({
+        //     'Content-Type': 'application/json',
+        //     'Accept': 'application/json',
+        //     'Cache-Control': 'no-cache, no-store, must-revalidate',
+        //     'Pragma': 'no-cache',
+        //     'Expires': 0
+        // });
+        const headers = new Headers({ 'Content-Type': 'application/json' });
         const options = new RequestOptions({ headers: headers });
 
         return this.http.get(path)
